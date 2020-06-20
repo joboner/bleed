@@ -3,3 +3,5 @@ note: you can use 'help <command>* <subcommand>' for further information on how 
 
 default prefix: *, you change it by running 'prefix set <prefixhere>'
 join discord server for better support or whatever: https://bleed.win/discord or https://discord.gg/T3epc7R
+
+this is currently being updated, check back later

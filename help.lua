@@ -159,7 +159,7 @@ Misc (useful stuff & useless stuff):
     14: Replies w insulting msg unless the bot isn''t alive   : *check 
     15. Flip a coin!                                          : *coinflip
     16. Give me choices and I will pick for you               : *choose <choices> [separate each choice with a space]
-    17. Play Rock–paper–scissors with me!                     : *rps <choices>
+    17. Play Rock-paper-scissors with me!                     : *rps <choices>
     18. Returns a large emoji or server emote                 : *[jumbo|enlarge|e] <emoji or emote>
     19. Downloads emote and adds to server                    : *[addemote|adde] <emote>
     20. Get reminders for a duration set                      : *remind <duration> <something>  

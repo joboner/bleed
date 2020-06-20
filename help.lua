@@ -23,7 +23,7 @@ Last.fm [command aliases: lastfm, lfm, lf] / Music Stuff:
     12. View your Last.fm score and statistics                : *lastfm score <member>
     13. View the Last.fm globalboard (reactions)              : *lastfm [globalboard|gb]
     14. View the Last.fm scoreboard (reactions)               : *lastfm [scoreboard|serverboard|sb]
-    15: View a list of members with the most crowns           : *lastfm [mostcrowns|crownsall]
+    15. View a list of members with the most crowns           : *lastfm [mostcrowns|crownsall]
     16. View a list of your crowns                            : *lastfm crowns <member> 
     17. Check how many plays you have for an artist           : *lastfm plays <artist>
     18. Check how many plays you have for an album            : *lastfm [playsalbum|playsa] <album> [NOTE: specify artist for best guess]
@@ -70,7 +70,7 @@ Moderation:
         1. Restores member perm for every channel             : *iunmute all <member>
     16. Removes member perm for add reacts & external emotes  : *rmute <member> --REQUIRES BAN MEMBERS--
         1. Removes member perm for every channel              : *rmute all <member>
-    17. Restores member perm for add reacts & external emotes : *runmute <member >--REQUIRES BAN MEMBERS--
+    17. Restores member perm for add reacts & external emotes : *runmute <member> --REQUIRES BAN MEMBERS--
         1. Restores member perm for every channel             : *runmute all <member>
     18. Updates the reason on a case log                      : *reason <case id> <reason> --REQUIRES MANAGE MESSAGES-- 
     19. See logged reactions for a message                    : *[reactionhistory|rh] <channel> <message id> --REQUIRES MANAGE MESSAGES--

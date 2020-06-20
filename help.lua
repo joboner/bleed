@@ -250,7 +250,7 @@ Starboard [command alias: star]:
 Registration [command alias: reg, r]:
     1. Accept a member pending registration                   : *registration [allow|accept|a] <id>
     2. Denies a member pending registration                   : *registration [decline|deny|d] <id>
-    3. View registration settings for guild	                  : *registration config
+    3. View registration settings for guild                   : *registration config
     4. Start registration set up process for a guild          : *registration [setup|set]
     5. Start registration for a guild                         : *registration start
     6. Enables registration mode for guild                    : *registration [lock|disable|off]

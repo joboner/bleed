@@ -96,7 +96,7 @@ Moderation:
     26. Enable permissions to attach files & embed links      : *revokefiles on <channel> --REQUIRES MANAGE MESSAGES--
     27. Disable permissions to attach files & embed links     : *revokefiles off <channel> --REQUIRES MANAGE MESSAGES--
     28. Assigns the mentioned member a new nickname           : *rename <member> <new nick> --REQUIRES MANAGE NICKNAMES--
-    29. Start process for setting up the moderation system    : *setme
+    29. Start process for setting up the moderation system    : *setme --REQUIRES ADMINISTRATOR--
 
 
 Information / Search:

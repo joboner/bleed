@@ -73,7 +73,7 @@ Moderation:
     17. Restores member perm for add reacts & external emotes : *runmute <member> --REQUIRES BAN MEMBERS--
         1. Restores member perm for every channel             : *runmute all <member>
     18. Updates the reason on a case log                      : *reason <case id> <reason> --REQUIRES MANAGE MESSAGES-- 
-    19. See logged reactions for a message                    : *[reactionhistory|rh] <channel> <message id> --REQUIRES MANAGE MESSAGES--
+    ---19. See logged reactions for a message                 : *[reactionhistory|rh] <channel> <message id>---
     20. View a list of every punishment recorded for a user   : *history <member> --REQUIRES MANAGE MESSAGES--
     21. View a list of every current jailed member            : *jaillist
     22. Adds or removes role to/from a member                 : *role <member> <role> --REQUIRES MANAGE ROLES--

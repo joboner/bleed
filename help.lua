@@ -192,11 +192,11 @@ Server Configuration:
     5. Disable a command in a channel                        : *disablecommand <channel> <command> --REQUIRES MANAGE CHANNELS--
         1. Disable a command in every channel                : *disablecommand all <command>
         2. View a list of disabled commands in guild         : *disablecommand list
-    6. Only allows people with a certain role to use command : *[restrictcommand|restrict|rc] add <command> <role>
+    6. Only allows people with a certain role to use command : *[restrictcommand|restrict|rc] add <command> <role> --REQUIRES MANAGE GUILD--
         1. Removes role''s exclusive permission for command  : *restrictcomamnd remove <command> <role>
         2. Removes every restrict command entry              : *restrictcomamnd [clear|reset]
-        3. View a list of every restricted command           : *restrictcommand list
-    7. Reapplies a role on join                              : *stickyrole add <member> <role>
+        3. View a list of every restricted command           : *restrictcommand list 
+    7. Reapplies a role on join                              : *stickyrole add <member> <role> --REQUIRES MANAGE ROLES--
         1. Removes sticky role on join                       : *stickyrole remove <member> <role>
         2. View a list of every sticky role along w/ user    : *stickyrole list
 

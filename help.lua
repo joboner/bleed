@@ -47,6 +47,7 @@ Last.fm [command aliases: lastfm, lfm, lf] / Music Stuff:
     35. Finds track results from the Spotify API              : *[spotifytrack|spotify|sp] <track> [NOTE: specify artist for best guess]
     36. Find song on soundcloud                               : *[soundcloud|sc] <track> [NOTE: specify artist for best guess]
     37. Gets lyrics for the given song                        : *lyrics <track> [NOTE: specify artist for best guess]
+    38. See your statistics for an artist!                    : *lastfm [overview|stats] <artist>
 
 Moderation:
     1. Clean up the bot''s messages in a channel              : *cleanup <amount> --REQUIRES MANAGE MESSAGES--
@@ -156,7 +157,7 @@ Misc (useful stuff & useless stuff):
     11. pong emote [useless]                                  : *pong
     12. skepta dance [useless]                                : *skeptadance
     13. yes [useless]                                         : *no
-    14: Replies w insulting msg unless the bot isn''t alive   : *check 
+    14. Replies w insulting msg unless the bot isn''t alive   : *check 
     15. Flip a coin!                                          : *coinflip
     16. Give me choices and I will pick for you               : *choose <choices> [separate each choice with a space]
     17. Play Rock-paper-scissors with me!                     : *rps <choices>
@@ -236,7 +237,7 @@ Tags [command aliases: tag, t]:
     8. Search guild for tags containing a keyword             : *tags search <keyword>
     9. View a list of every tag in guild                      : *tags list
 
-Starboard [command alias: star]:
+Starboard [command alias: star]: --REQUIRES MANAGE SERVER--
     1. Sets the emoji that triggers the starboard messages    : *starboard emoji <emoji/emote> [NOTE: make sure the bot can access the emote if not using emoji]
     2. Ignore stars from those without a whitelisted role     : *starboard role <role name>
     3. View a list of starboard roles that are whitelisted    : *starboard [rolelist|starboard]
@@ -255,6 +256,12 @@ Registration [command alias: reg, r]:
     5. Start registration for a guild                         : *registration start
     6. Enables registration mode for guild                    : *registration [lock|disable|off]
     7. Disables registration mode for guild                   : *registration [unlock|enable|on]
+
+Giveaway: --REQUIRES MANAGE GUILD--
+    1. Start a quick giveaway in your guild                   : *giveaway (channel) <time> <prize>
+    2. Manually ends a giveaway early with a winner picked    : *giveaway end <message_id>
+    3. Rerolls the specified or latest giveaway in guild      : *giveaway reroll <message_id>
+    4. View a list of every active giveaway in guild          : *giveaway list
 
 shoutout notsobot for the help layout inspiration or whatever
 join the discord server: https://bleed.win/discord

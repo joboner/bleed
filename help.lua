@@ -74,7 +74,7 @@ Moderation:
     17. Restores member perm for add reacts & external emotes : *runmute <member> --REQUIRES BAN MEMBERS--
         1. Restores member perm for every channel             : *runmute all <member>
     18. Updates the reason on a case log                      : *reason <case id> <reason> --REQUIRES MANAGE MESSAGES-- 
-    ---19. See logged reactions for a message                 : *[reactionhistory|rh] <channel> <message id>---
+    19. See logged reactions for a message                    : *[reactionhistory|rh] <channel> <message id>
     20. View a list of every punishment recorded for a user   : *history <member> --REQUIRES MANAGE MESSAGES--
     21. View a list of every current jailed member            : *jaillist
     22. Adds or removes role to/from a member                 : *role <member> <role> --REQUIRES MANAGE ROLES--
@@ -98,6 +98,7 @@ Moderation:
     27. Disable permissions to attach files & embed links     : *revokefiles off <channel> --REQUIRES MANAGE MESSAGES--
     28. Assigns the mentioned member a new nickname           : *rename <member> <new nick> --REQUIRES MANAGE NICKNAMES--
     29. Start process for setting up the moderation system    : *setme --REQUIRES ADMINISTRATOR--
+    30. Unlocks every channel if the antiraid was triggered   : *unlock all --REQUIRES BAN MEMBERS--
 
 
 Information / Search:
@@ -229,7 +230,7 @@ Tags [command aliases: tag, t]:
     Info - No, tags are not global; they are server specific.
     1. View a tag                                             : *tags <tag name>
     2. Add a tag                                              : *tags add <tag name> <contexxt>
-    3. Delete a tag                                           : *tags [remove|delete|del] <tag name>
+    3. Delete a tag                                           : *tags [remove|delete|del] <tag name> --can bypass if admin--
     4. Return a random tag                                    : *tags random
     5. View the author of a tag                               : *tags author <member>
     6. Rename your tag''s name                                : *tags rename <tag name> <new name>
@@ -237,7 +238,7 @@ Tags [command aliases: tag, t]:
     8. Search guild for tags containing a keyword             : *tags search <keyword>
     9. View a list of every tag in guild                      : *tags list
 
-Starboard [command alias: star]: --REQUIRES MANAGE SERVER--
+Starboard [command alias: star]: --REQUIRES MANAGE GUILD--
     1. Sets the emoji that triggers the starboard messages    : *starboard emoji <emoji/emote> [NOTE: make sure the bot can access the emote if not using emoji]
     2. Ignore stars from those without a whitelisted role     : *starboard role <role name>
     3. View a list of starboard roles that are whitelisted    : *starboard [rolelist|starboard]

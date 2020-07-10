@@ -249,6 +249,17 @@ Starboard [command alias: star]: --REQUIRES MANAGE GUILD--
     8. Enables/unlocks starboard from operating               : *starboard [unlock|enable|on]
     9. Resets guild''s configuration for starboard            : *starboard [reset|delete|del]
 
+Clownboard [command alias: clown]: --REQUIRES MANAGE GUILD--
+    1. Sets the emoji that triggers the clownboard messages    : *clownboard emoji <emoji/emote> [NOTE: make sure the bot can access the emote if not using emoji]
+    2. Ignore clowns from those without a whitelisted role     : *clownboard role <role name>
+    3. View a list of clownboard roles that are whitelisted    : *clownboard [rolelist|starboard]
+    4. Sets the channel where clownboard messages will be sent : *clownboard set <channel>
+    5. View the settings for clownboard in guild               : *clownboard config
+    6. Sets the default amount clowns needed to post           : *clownboard threshold <amount>
+    7. Disables/locks clownboard from operating                : *clownboard [lock|disable|off]
+    8. Enables/unlocks clownboard from operating               : *clownboard [unlock|enable|on]
+    9. Resets guild''s configuration for clownboard            : *clownboard [reset|delete|del]
+
 Registration [command alias: reg, r]:
     1. Accept a member pending registration                   : *registration [allow|accept|a] <id>
     2. Denies a member pending registration                   : *registration [decline|deny|d] <id>

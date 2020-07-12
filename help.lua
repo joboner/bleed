@@ -48,6 +48,7 @@ Last.fm [command aliases: lastfm, lfm, lf] / Music Stuff:
     36. Find song on soundcloud                               : *[soundcloud|sc] <track> [NOTE: specify artist for best guess]
     37. Gets lyrics for the given song                        : *lyrics <track> [NOTE: specify artist for best guess]
     38. See your statistics for an artist!                    : *lastfm [overview|stats] <artist>
+    39. Compare your music taste between you and someone else : *lastfm taste (member) <period>
 
 Moderation:
     1. Clean up the bot''s messages in a channel              : *cleanup <amount> --REQUIRES MANAGE MESSAGES--

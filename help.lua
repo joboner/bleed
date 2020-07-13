@@ -47,7 +47,7 @@ Last.fm [command aliases: lastfm, lfm, lf] / Music Stuff:
     35. Finds track results from the Spotify API              : *[spotifytrack|spotify|sp] <track> [NOTE: specify artist for best guess]
     36. Find song on soundcloud                               : *[soundcloud|sc] <track> [NOTE: specify artist for best guess]
     37. Gets lyrics for the given song                        : *lyrics <track> [NOTE: specify artist for best guess]
-    38. See your statistics for an artist!                    : *lastfm [overview|stats] <artist>
+    38. See your statistics for an artist!                    : *lastfm [overview|ov] <artist>
     39. Compare your music taste between you and someone else : *lastfm taste (member) <period>
 
 Moderation:
@@ -190,9 +190,9 @@ Server Configuration:
     3. Add a filtered word to guild                          : *filter add <word> --REQUIRES MANAGE CHANNELS-- 
         1. Remove a filtered word from guild                 : *filter remove <word> 
         2. View a list of filtered words in guild            : *filter list
-    4. Enable a previously disabled command in a channel     : *enablecommand <channel> <command> --REQUIRES MANAGE CHANNELS-- 
+    4. Enable a previously disabled command in a channel     : *[enablecommand|ecmd] <channel> <command> --REQUIRES MANAGE CHANNELS-- 
         1. Enable a command in every channel                 : *enablecommand all <command>
-    5. Disable a command in a channel                        : *disablecommand <channel> <command> --REQUIRES MANAGE CHANNELS--
+    5. Disable a command in a channel                        : *[disablecommand|dcmd] <channel> <command> --REQUIRES MANAGE CHANNELS--
         1. Disable a command in every channel                : *disablecommand all <command>
         2. View a list of disabled commands in guild         : *disablecommand list
     6. Only allows people with a certain role to use command : *[restrictcommand|restrict|rc] add <command> <role> --REQUIRES MANAGE GUILD--

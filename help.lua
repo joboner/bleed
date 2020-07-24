@@ -52,11 +52,11 @@ Last.fm [command aliases: lastfm, lfm, lf] / Music Stuff:
 
 Moderation:
     1. Clean up the bot''s messages in a channel              : *cleanup <amount> --REQUIRES MANAGE MESSAGES--
-    2. Warns the mentioned user                               : *warn <member> <reason> --REQUIRES MANAGGE MESSAGES--
-    3. Kicks the mentioned user from the guild                : *kick <member> <reason> --REQUIRES KICK MEMBERS--
+    2. Warns the mentioned user                               : *warn <member> <reason> [has -s parameter before/after reason for silent warn] --REQUIRES MANAGGE MESSAGES--
+    3. Kicks the mentioned user from the guild                : *kick <member> <reason> [has -s parameter before/after reason for silent kick] --REQUIRES KICK MEMBERS--
     4. Softbans the mentioned user deleting 1d of messages    : *softban <member> <del msg days> <reason> --REQUIRES BAN MEMBERS--
-    5. Bans the mentioned user from the guild                 : *ban <member> <del msg days> <reason> --REQUIRES BAN MEMBERS-- 
-    6. Bans user from guild before they can join [use id]     : *hackban <user id> <reason> --REQUIRES BAN MEMBERS--
+    5. Bans the mentioned user from the guild                 : *ban <member> <del msg days> <reason> [has -s parameter before/after reason for silent ban] --REQUIRES BAN MEMBERS-- 
+    6. Bans user from guild before they can join [use id]     : *hackban <user id> <reason> [doesn''t PM a user when hackbanned] --REQUIRES BAN MEMBERS--
     7. Unbans the mentioned user from the guild               : *unban <user> --REQUIRES BAN MEMBERS--
     8. Jails the mentioned user, puts them in timeout         : *jail <member> <duration> <reason> --REQUIRES MANAGE MESSAGES--
     9. Unjails a member ending their duration early           : *unjail <member> <reason>
@@ -100,6 +100,10 @@ Moderation:
     28. Assigns the mentioned member a new nickname           : *rename <member> <new nick> --REQUIRES MANAGE NICKNAMES--
     29. Start process for setting up the moderation system    : *setme --REQUIRES ADMINISTRATOR--
     30. Unlocks every channel if the antiraid was triggered   : *unlock all --REQUIRES BAN MEMBERS--
+    31. View notes on a member                                : *[notes|note] <member>
+        1. Add a note for a member                            : *notes add <member> <note>
+        2. Removes a note for a member                        : *notes [remove|delete|del] <member> <id>
+        3. Clears all notes for a member                      : *notes [clear|cl] <member>
 
 
 Information / Search:
@@ -144,6 +148,7 @@ Information / Search:
         -- allison, michael, lisa, kate, renee, birgit, dieter, francesca, emi, isabella, enrique, laura, sofia--
     37. Identify a picture using Microsoft''s captionbot      : *[identify|id] <url or attachment>
     38. Gets basic information about a query                  : *[wolframalpha|wolfram|w] <query>
+    39. View guild name changes                               : *[gnames|snames] <guild id>
 
 Misc (useful stuff & useless stuff):
     1. Add up/down arrow to message initiating a poll         : *[quickpoll|qp] <question>

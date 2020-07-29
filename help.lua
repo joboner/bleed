@@ -149,6 +149,7 @@ Information / Search:
     37. Identify a picture using Microsoft''s captionbot      : *[identify|id] <url or attachment>
     38. Gets basic information about a query                  : *[wolframalpha|wolfram|w] <query>
     39. View guild name changes                               : *[gnames|snames] <guild id>
+    40. Returns information about the specified game title... : *[game|gamesearch] <title>
 
 Misc (useful stuff & useless stuff):
     1. Add up/down arrow to message initiating a poll         : *[quickpoll|qp] <question>

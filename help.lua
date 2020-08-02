@@ -172,6 +172,7 @@ Misc (useful stuff & useless stuff):
     18. Returns a large emoji or server emote                 : *[jumbo|enlarge|e] <emoji or emote>
     19. Downloads emote and adds to server                    : *[addemote|adde] <emote>
     20. Get reminders for a duration set                      : *remind <duration> <something>  
+    21. Would you rather?                                     : *[wouldyourather|wyr]
 
 Server Configuration:
     1. View prefix                                            : *prefix

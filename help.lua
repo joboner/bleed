@@ -156,8 +156,8 @@ Misc (useful stuff & useless stuff):
     1. Add up/down arrow to message initiating a poll         : *[quickpoll|qp] <question>
     2. Set an AFK status for when you are mentioned           : *afk <away message>
     3. Create a short poll                                    : *poll <seconds> <question>
-    4. Create your own embed                                  : *[createembed|ce] <embed code>
-    5. Edit an embed you created                              : *[editembed|edite] (message link) <embed code>
+    4. Create your own embed                                  : *[createembed|ce] <embed code> --see embed code examples and info at bottom--
+    5. Edit an embed you created                              : *[editembed|edite] (message link) <embed code> --see embed code examples and info at bottom--
     6. Copy an existing embed''s code for creating an embed   : *[embedcode|copyembed] (message link>
     5. Generate a random hex (color)                          : *randomhex
     6. Show a hex code''s color in a embed                    : *color <hex, member, or role color>
@@ -286,5 +286,33 @@ Giveaway: --REQUIRES MANAGE GUILD--
     3. Rerolls the specified or latest giveaway in guild      : *giveaway reroll <message_id>
     4. View a list of every active giveaway in guild          : *giveaway list
 
+Embed code documentation: --REQUIRES MANAGE MESSAGES--
+    Available embed settings: (Example is on the right)
+        1. {author: text && icon url && valid url}            : {author: jon && https://i1.sndcdn.com...(proper url) && https://bleed.win}
+        2. {footer: text && icon url}                         : {footer: powered by bleed bot && https://cdn.iconscout.com...(proper url)}
+        3. {description: text}                                : {description: izaya tiji put 2020 deluxe on streaming please}
+        4. {color: hex code}                                  : {color: #ff0000}
+        5. {url: valid url}                                   : {url: https://bleed.win}
+        6. {title: text}                                      : {url: bleed bot is the best}
+    Fields for embeds:
+        1. {field: name && value} (no inline)                 : {field: discord server && https://bleed.win/discord}
+        2. {field: name && value inline) (yes inline)         : {field: help page && https://bleed.win/help}
+    Other settings:
+        1. {timestamp} (prints current date on embed)         : {timestamp}
+        2. {thumbnail: valid url}                             : {thumbnail: https://bleed.win/other/bender_icon.png}
+        3. {image: valid url}                                 : {image: https://bleed.win/other/bender_icon.png
+                    
+    Examples:
+        1. {title: a title}$v{description: a desc}$v{footer: footer text goes here}$v{color: #ff0f00}
+         -- Creates a basic embed: https://bleed.win/img/e1.png
+        2. {author: bleed.win && https://bleed.win/img/bld_small}$v{title: the bleed bot server}
+           $v{url: https://bleed.win}$v{description: welcome :mmm~1:}$v{color: #00001}
+         -- Creates a tiny bit more complex embed: https://bleed.win/img/e2.png
+        3. {color: #6a5b48}$v{footer: Playcount: 14 ∙ Total Scrobbles: 50286 ∙ Album: 20/20 (Deluxe)}...
+         -- Copying embed code then recreating it using createembed with the code: https://bleed.win/img/e3.png
+                    
+     --more features will be added in the future. fyi this is not a programming language for the clueless kids--
+     --join the discord server and go to the support channel if you need help creating an embed--
+                
 shoutout notsobot for the help layout inspiration or whatever
 join the discord server: https://bleed.win/discord

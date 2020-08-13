@@ -19,36 +19,37 @@ Last.fm [command aliases: lastfm, lfm, lf] / Music Stuff:
     8. View the top ten listeners for a track                 : *lastfm [wktrack|wkt] <artist> [COOLDOWN: 60 seconds] [NOTE: specify artist for best guess]
     9. View a collage of your most listened to albums         : *lastfm collage <member or lfm username> <row>* <col>* <time period>
     10. Set embed color for Last.fm commands                  : *lastfm color <hex, dominant or role>
-    11. Change artwork for an album instead of using Last.fm  : *lastfm url <url> <album> [NOTE: specify artist for best guess]
-    12. View your Last.fm score and statistics                : *lastfm score <member>
-    13. View the Last.fm globalboard (reactions)              : *lastfm [globalboard|gb]
-    14. View the Last.fm scoreboard (reactions)               : *lastfm [scoreboard|serverboard|sb]
-    15. View a list of members with the most crowns           : *lastfm [mostcrowns|crownsall]
-    16. View a list of your crowns                            : *lastfm crowns <member> 
-    17. Check how many plays you have for an artist           : *lastfm plays <artist>
-    18. Check how many plays you have for an album            : *lastfm [playsalbum|playsa] <album> [NOTE: specify artist for best guess]
-    19. Check how many plays you have for a track             : *lastfm [playstrack|playst] <track> [NOTE: specify artist for best guess]
-    20. Check how many plays you have for tracks off an album : *lastfm playsall <artist> [NOTE: specify artist for best guess]
-    21. Set your upvote and downvote reaction on Now Playing  : *lastfm react <upvote_reaction> <downvote_reaction>
-    22. Shows your current song playing from Last.fm          : *lastfm now <member or lfm username>
-    22. View your recent tracks played                        : *lastfm recent <member or lfm username>
-    23. View your recent tracks played for an artist          : *lastfm recentfor <artist>
-    24. View your most listened to artists                    : *lastfm [topartists|tar|artists] <member or lfm username> <time period>
-    25. View your most listened to tracks                     : *lastfm [toptracks|ttr|tracks] <member or lfm username> <time period>
-    26. View your most listened to albums                     : *lastfm [topalbums|tab|albums] <member or lfm username> <time period>
-    27. Gets lyrics from Genius for current song playing      : *lastfm lyrics <member>
-    28. Gives iTunes link for the current song playing        : *lastfm itunes <member>
-    29. Gives Soundcloud link for the current song playing    : *lastfm [soundcloud|sc] <member>
-    30. Gives Spotify results for the current song playing    : *lastfm [spotify|sp] <member>
-    31. Gives YouTue link for the current song playing        : *lastfm [youtube|yt] <member>
-    32. Shows your current song playing from Last.fm          : *[nowplaying|now|np|fm] <member or lfm username>
-    33. Finds a song from the iTunes API                      : *itunes <track> [NOTE: specify artist for best guess]
-    34. Finds album results from the Spotify API              : *[spotifyalbum|spalbum] <album> [NOTE: specify artist for best guess]
-    35. Finds track results from the Spotify API              : *[spotifytrack|spotify|sp] <track> [NOTE: specify artist for best guess]
-    36. Find song on soundcloud                               : *[soundcloud|sc] <track> [NOTE: specify artist for best guess]
-    37. Gets lyrics for the given song                        : *lyrics <track> [NOTE: specify artist for best guess]
-    38. See your statistics for an artist!                    : *lastfm [overview|ov] <artist>
-    39. Compare your music taste between you and someone else : *lastfm taste (member) <period>
+    11. Submit your own artworks for an album cover ...       : *lastfm url <url> <album> [NOTE: specify artist for best guess]
+    12. Vote for submitted album artworks to display on NP .. : *lastfm vote <album> [NOTE specify artist for best guess]
+    13. View your Last.fm score and statistics                : *lastfm score <member>
+    14. View the Last.fm globalboard (reactions)              : *lastfm [globalboard|gb]
+    15. View the Last.fm scoreboard (reactions)               : *lastfm [scoreboard|serverboard|sb]
+    16. View a list of members with the most crowns           : *lastfm [mostcrowns|crownsall]
+    17. View a list of your crowns                            : *lastfm crowns <member> 
+    18. Check how many plays you have for an artist           : *lastfm plays <artist>
+    19. Check how many plays you have for an album            : *lastfm [playsalbum|playsa] <album> [NOTE: specify artist for best guess]
+    20. Check how many plays you have for a track             : *lastfm [playstrack|playst] <track> [NOTE: specify artist for best guess]
+    21. Check how many plays you have for tracks off an album : *lastfm playsall <artist> [NOTE: specify artist for best guess]
+    22. Set your upvote and downvote reaction on Now Playing  : *lastfm react <upvote_reaction> <downvote_reaction>
+    23. Shows your current song playing from Last.fm          : *lastfm now <member or lfm username>
+    24. View your recent tracks played                        : *lastfm recent <member or lfm username>
+    25. View your recent tracks played for an artist          : *lastfm recentfor <artist>
+    26. View your most listened to artists                    : *lastfm [topartists|tar|artists] <member or lfm username> <time period>
+    27. View your most listened to tracks                     : *lastfm [toptracks|ttr|tracks] <member or lfm username> <time period>
+    28. View your most listened to albums                     : *lastfm [topalbums|tab|albums] <member or lfm username> <time period>
+    29. Gets lyrics from Genius for current song playing      : *lastfm lyrics <member>
+    30. Gives iTunes link for the current song playing        : *lastfm itunes <member>
+    31. Gives Soundcloud link for the current song playing    : *lastfm [soundcloud|sc] <member>
+    32. Gives Spotify results for the current song playing    : *lastfm [spotify|sp] <member>
+    33. Gives YouTue link for the current song playing        : *lastfm [youtube|yt] <member>
+    34. Shows your current song playing from Last.fm          : *[nowplaying|now|np|fm] <member or lfm username>
+    35. Finds a song from the iTunes API                      : *itunes <track> [NOTE: specify artist for best guess]
+    36. Finds album results from the Spotify API              : *[spotifyalbum|spalbum] <album> [NOTE: specify artist for best guess]
+    37. Finds track results from the Spotify API              : *[spotifytrack|spotify|sp] <track> [NOTE: specify artist for best guess]
+    38. Find song on soundcloud                               : *[soundcloud|sc] <track> [NOTE: specify artist for best guess]
+    39. Gets lyrics for the given song                        : *lyrics <track> [NOTE: specify artist for best guess]
+    40. See your statistics for an artist!                    : *lastfm [overview|ov] <artist>
+    41. Compare your music taste between you and someone else : *lastfm taste (member) <period>
 
 Moderation:
     1. Clean up the bot''s messages in a channel              : *cleanup <amount> --REQUIRES MANAGE MESSAGES--
@@ -134,7 +135,7 @@ Information / Search:
     25. Gets the definition of word from Urban Dictionary     : *[urbandictionary|ud|urban] <word>
     26. Get minecraft profile name history                    : *namemc <ign/username>
     27. Shows information of a book from goodreads            : *[book|goodreads] <book title>
-    28. Search MyAnimeList for manga information              : *managa <search>
+    28. Search MyAnimeList for manga information              : *manga <search>
     29. Search MyAnimeList for anime information              : *anime <search>
     30. Returns information about the specified TV show       : *tvshow <search>
     31. Returns information about the specified movie         : *movie <search>
@@ -155,7 +156,9 @@ Misc (useful stuff & useless stuff):
     1. Add up/down arrow to message initiating a poll         : *[quickpoll|qp] <question>
     2. Set an AFK status for when you are mentioned           : *afk <away message>
     3. Create a short poll                                    : *poll <seconds> <question>
-    4. Create your own embed                                  : *[createembed|ce] [starts a quick setup]
+    4. Create your own embed                                  : *[createembed|ce] <embed code>
+    5. Edit an embed you created                              : *[editembed|edite] (message link) <embed code>
+    6. Copy an existing embed''s code for creating an embed   : *[embedcode|copyembed] (message link>
     5. Generate a random hex (color)                          : *randomhex
     6. Show a hex code''s color in a embed                    : *color <hex, member, or role color>
     7. Decode a BASE64 string                                 : *[base64|decode] <coded string>

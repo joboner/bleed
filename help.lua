@@ -212,6 +212,17 @@ Server Configuration:
     7. Reapplies a role on join                              : *stickyrole add <member> <role> --REQUIRES MANAGE ROLES--
         1. Removes sticky role on join                       : *stickyrole remove <member> <role>
         2. View a list of every sticky role along w/ user    : *stickyrole list
+    8. Set up a welcome message in one or multiple channels  : *settings welcome <add or remove> <embed code or message>
+        1. Add a welcome message                             : *settings welcome add <embed code or message>
+        2. Remove a welcome message                          : *settings welcome [remove|delete|del] <embed code or message>
+        3. View variables for embed code                     : *settings welcome [variables|vars]
+        4. View welcome channels for guild                   : *settings welcome [list|all]
+    9. Set up a goodbye message in one or multiple channels  : *settings goodbye <add or remove> <embed code or message>
+        1. Add a goodbye message                             : *settings goodbye add <embed code or message>
+        2. Remove a goodbye message                          : *settings goodbye [remove|delete|del] <embed code or message>
+        3. View variables for embed code                     : *settings goodbye [variables|vars]
+        4. View welcome channels for guild                   : *settings goodbye [list|all]
+       
 
 Reaction [command aliases: reactiontrigger, react, rt] / Previous Reaction [command aliases: previousreaction, pr]: --REQUIRES MANAGE EMOJIS--
     1. Adds a reaction trigger to guild                       : *reaction add <emoji or emote> <trigger word>

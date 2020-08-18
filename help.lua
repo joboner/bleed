@@ -197,6 +197,7 @@ Server Configuration:
         9. Enable or disable spam messages in channels       : *settings [antispam|as] <yes or no>
         10. Set a join message for new members               : *settings joinmessage <message>
         11. Set a custom jail message                        : *settings jailmessage <message>
+        12. Enable or disable ban new accounts on join       : *settings [bannew|bannewaccount] <yes or no>
     3. Add a filtered word to guild                          : *filter add <word> --REQUIRES MANAGE CHANNELS-- 
         1. Remove a filtered word from guild                 : *filter remove <word> 
         2. View a list of filtered words in guild            : *filter list
@@ -222,6 +223,9 @@ Server Configuration:
         2. Remove a goodbye message                          : *settings goodbye [remove|delete|del] <embed code or message>
         3. View variables for embed code                     : *settings goodbye [variables|vars]
         4. View welcome channels for guild                   : *settings goodbye [list|all]
+    10. Add a custom text comamnd to guild                   : *[customtext|cc] add <command> <text>
+        1. Remove a custom text comamnd from guild           : *customtext remove <command>
+        2. View list of custom text commands for guild       : *customtext list
        
 
 Reaction [command aliases: reactiontrigger, react, rt] / Previous Reaction [command aliases: previousreaction, pr]: --REQUIRES MANAGE EMOJIS--

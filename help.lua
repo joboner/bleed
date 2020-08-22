@@ -191,13 +191,14 @@ Server Configuration:
         -- the way that antiraid system works is that if more than 5 members join within 1.61 seconds,
         -- channels are locked (only ones that @everyone is allowed to talk in) and essentialy placed on
         -- lockdown preventing any spam etc. this is super useful to prevent bot raids and stuff so i
-        -- personally am telling every server owner with bleed bot to enable this feature, it's good to have
+        -- personally am telling every server owner with bleed to enable this feature, it's good to have
         7. Set a channel to log join/leaves                  : *settings [joinlog|jl] <channel>
         8. Enable or disable auto mass mention ban           : *settings [massmention|mm] <yes or no>
         9. Enable or disable spam messages in channels       : *settings [antispam|as] <yes or no>
         10. Set a join message for new members               : *settings joinmessage <message>
         11. Set a custom jail message                        : *settings jailmessage <message>
         12. Enable or disable ban new accounts on join       : *settings [bannew|bannewaccount] <yes or no>
+        13. Enable or disable automatically delete invites   : *settings [deleteinvites|di] <yes or no>
     3. Add a filtered word to guild                          : *filter add <word> --REQUIRES MANAGE CHANNELS-- 
         1. Remove a filtered word from guild                 : *filter remove <word> 
         2. View a list of filtered words in guild            : *filter list

@@ -50,7 +50,7 @@ Last.fm [command aliases: lastfm, lfm, lf] / Music Stuff:
     39. Gets lyrics for the given song                        : *lyrics <track> [NOTE: specify artist for best guess]
     40. See your statistics for an artist!                    : *lastfm [overview|ov] <artist>
     41. Compare your music taste between you and someone else : *lastfm taste (member) <period>
-    42. Use a different embed for NP or create your own       : *lastfm mode <type or embed code>
+    42. Use a different embed for NP or create your own       : *lastfm mode <type or embed code> --see embed code examples & variable documentation at the very bottom--
 
 Moderation:
     1. Clean up the bot''s messages in a channel              : *cleanup <amount> --REQUIRES MANAGE MESSAGES--
@@ -318,21 +318,31 @@ Embed code documentation: --REQUIRES MANAGE MESSAGES--
         1. {timestamp} (prints current date on embed)         : {timestamp}
         2. {thumbnail: valid url}                             : {thumbnail: https://bleed.win/other/bender_icon.png}
         3. {image: valid url}                                 : {image: https://bleed.win/other/bender_icon.png
-    Last.fm variables (only available for *lastfm mode):
+    Last.fm variables (only available for *lastfm mode): --note: links and certain words like slurs etc are not allowed--
         1. {user.name}                                        : Last.fm username
         2. {user.avatar}                                      : Last.fm profile picture
         3. {user.plays}                                       : Total scrobbles for Last.fm account
         4. {user.url}                                         : Last.fm URL for Last.fm account
-        5. {author.emoji}                                     : Author emoji (you probably don''t have this)
-        6. {author.name}                                      : Author name (not nickname)
-        7. {album.cover}                                      : Current playing album cover
-        8. {album.name}                                       : Current playing album title
-        9. {album.url}                                        : Current playing album URL
-        10. {track.name}                                      : Current playing track title
-        11. {track.url}                                       : Current playing track URL
-        12. {track.plays}                                     : Current playing track playcount
-        13. {artist.name}                                     : Current playing artist name
-        14. {artist.url}                                      : Current playing artist URL
+        5. {author}                                           : Author name and discriminator (ex: jon#0006)
+        6. {author.discriminator}                             : Author discriminator only (ex: 0006)
+        7. {author.emoji}                                     : Author emoji (you probably don''t have this)
+        8. {author.name}                                      : Author username
+        9. {author.nickname}                                  : Author''s nickname, defaults back to name if nickname false
+        10. {album.cover}                                     : Current playing album cover
+        11. {album.name}                                      : Current playing album title
+        12. {album.url}                                       : Current playing album URL
+        13. {track.name}                                      : Current playing track title
+        14. {track.url}                                       : Current playing track URL
+        15. {track.spotify_url}                               : Current playing track URL (from spotify)
+        16. {track.release_date}                              : Current playing track release date (from spotify)
+         --this will just return a datetime object, use {timestamp} in your embed code to
+         --put the track's album release date on the embed's footer: https://bleed.win/img/e5.png
+        17. {track.duration}                                  : Current playing track duration (from spotify)
+         --formatted like 0:83, 2:48, 1:03:22 ..etc
+        18. {track.plays}                                     : Current playing track playcount
+        19. {artist.name}                                     : Current playing artist name
+        20. {artist.url}                                      : Current playing artist URL
+        21. {artist.image}                                    : Current playing artist image (from spotify)
                     
     Examples:
         1. {title: a title}$v{description: a desc}$v{footer: footer text goes here}$v{color: #ff0f00}
@@ -342,6 +352,10 @@ Embed code documentation: --REQUIRES MANAGE MESSAGES--
          -- Creates a tiny bit more complex embed: https://bleed.win/img/e2.png
         3. {color: #6a5b48}$v{footer: Playcount: 14 ∙ Total Scrobbles: 50286 ∙ Album: 20/20 (Deluxe)}...
          -- Copying embed code then recreating it using createembed with the code: https://bleed.win/img/e3.png
+        4. {embed}$v{author: {user.name} && {user.avatar} && {user.url}}$v{description: [**{track.name}**]({track.url})
+           by [{artist.name}]({artist.url})
+           on [{album.name}]({album.url})}$v{footer: ▶️ {track.plays}x • {track.duration}}$v{thumbnail: {album.cover}}$v{timestamp}
+         -- Creating your own embed for *nowplaying command (thats the design i use): https://bleed.win/img/e4.png
                     
      --more features will be added in the future. fyi this is not a programming language for the clueless kids--
      --join the discord server and go to the support channel if you need help creating an embed--

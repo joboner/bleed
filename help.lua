@@ -50,6 +50,7 @@ Last.fm [command aliases: lastfm, lfm, lf] / Music Stuff:
     39. Gets lyrics for the given song                        : *lyrics <track> [NOTE: specify artist for best guess]
     40. See your statistics for an artist!                    : *lastfm [overview|ov] <artist>
     41. Compare your music taste between you and someone else : *lastfm taste (member) <period>
+    42. Use a different embed for NP or create your own       : *lastfm mode <type or embed code>
 
 Moderation:
     1. Clean up the bot''s messages in a channel              : *cleanup <amount> --REQUIRES MANAGE MESSAGES--
@@ -317,6 +318,21 @@ Embed code documentation: --REQUIRES MANAGE MESSAGES--
         1. {timestamp} (prints current date on embed)         : {timestamp}
         2. {thumbnail: valid url}                             : {thumbnail: https://bleed.win/other/bender_icon.png}
         3. {image: valid url}                                 : {image: https://bleed.win/other/bender_icon.png
+    Last.fm variables (only available for *lastfm mode):
+        1. {user.name}                                        : Last.fm username
+        2. {user.avatar}                                      : Last.fm profile picture
+        3. {user.plays}                                       : Total scrobbles for Last.fm account
+        4. {user.url}                                         : Last.fm URL for Last.fm account
+        5. {author.emoji}                                     : Author emoji (you probably don''t have this)
+        6. {author.name}                                      : Author name (not nickname)
+        7. {album.cover}                                      : Current playing album cover
+        8. {album.name}                                       : Current playing album title
+        9. {album.url}                                        : Current playing album URL
+        10. {track.name}                                      : Current playing track title
+        11. {track.url}                                       : Current playing track URL
+        12. {track.plays}                                     : Current playing track playcount
+        13. {artist.name}                                     : Current playing artist name
+        14. {artist.url}                                      : Current playing artist URL
                     
     Examples:
         1. {title: a title}$v{description: a desc}$v{footer: footer text goes here}$v{color: #ff0f00}

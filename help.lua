@@ -319,30 +319,32 @@ Embed code documentation: --REQUIRES MANAGE MESSAGES--
         2. {thumbnail: valid url}                             : {thumbnail: https://bleed.win/other/bender_icon.png}
         3. {image: valid url}                                 : {image: https://bleed.win/other/bender_icon.png
     Last.fm variables (only available for *lastfm mode): --note: links and certain words like slurs etc are not allowed--
-        1. {user.name}                                        : Last.fm username
-        2. {user.avatar}                                      : Last.fm profile picture
-        3. {user.plays}                                       : Total scrobbles for Last.fm account
-        4. {user.url}                                         : Last.fm URL for Last.fm account
+        1. {user.name}                                        : Last.fm username (from Last.fm)
+        2. {user.avatar}                                      : Last.fm profile picture (from Last.fm)
+        3. {user.plays}                                       : Total scrobbles for Last.fm account (from Last.fm)
+         --you can use {proper(user.plays)} for formatting the amount to be proper
+        4. {user.url}                                         : Last.fm URL for Last.fm account (from Last.fm)
         5. {author}                                           : Author name and discriminator (ex: jon#0006)
         6. {author.discriminator}                             : Author discriminator only (ex: 0006)
         7. {author.emoji}                                     : Author emoji (you probably don''t have this)
         8. {author.name}                                      : Author username
         9. {author.nickname}                                  : Author''s nickname, defaults back to name if nickname false
-        10. {album.cover}                                     : Current playing album cover
-        11. {album.name}                                      : Current playing album title
-        12. {album.url}                                       : Current playing album URL
-        13. {track.name}                                      : Current playing track title
-        14. {track.url}                                       : Current playing track URL
-        15. {track.spotify_url}                               : Current playing track URL (from spotify)
-        16. {track.release_date}                              : Current playing track release date (from spotify)
+        10. {album.cover}                                     : Current playing album cover (from Spotify)
+        11. {album.name}                                      : Current playing album title (from Last.fm)
+        12. {album.url}                                       : Current playing album URL (from Last.fm)
+        13. {track.name}                                      : Current playing track title (from Last.fm)
+        14. {track.url}                                       : Current playing track URL (from Last.fm)
+        15. {track.spotify_url}                               : Current playing track URL (from Spotify)
+        16. {track.release_date}                              : Current playing track release date (from Spotify)
          --this will just return a datetime object, use {timestamp} in your embed code to
          --put the track's album release date on the embed's footer: https://bleed.win/img/e5.png
-        17. {track.duration}                                  : Current playing track duration (from spotify)
+        17. {track.duration}                                  : Current playing track duration (from Spotify)
          --formatted like 0:83, 2:48, 1:03:22 ..etc
-        18. {track.plays}                                     : Current playing track playcount
-        19. {artist.name}                                     : Current playing artist name
-        20. {artist.url}                                      : Current playing artist URL
-        21. {artist.image}                                    : Current playing artist image (from spotify)
+        18. {track.plays}                                     : Current playing track playcount (from Last.fm)
+         --you can use {proper(track.plays)} for formatting the amount to be proper
+        19. {artist.name}                                     : Current playing artist name (from Last.fm)
+        20. {artist.url}                                      : Current playing artist URL (from Last.fm)
+        21. {artist.image}                                    : Current playing artist image (from Spotify)
                     
     Examples:
         1. {title: a title}$v{description: a desc}$v{footer: footer text goes here}$v{color: #ff0f00}

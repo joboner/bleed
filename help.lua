@@ -50,7 +50,7 @@ Last.fm [command aliases: lastfm, lfm, lf] / Music Stuff:
     39. Gets lyrics for the given song                        : *lyrics <track> [NOTE: specify artist for best guess]
     40. See your statistics for an artist!                    : *lastfm [overview|ov] <artist>
     41. Compare your music taste between you and someone else : *lastfm taste (member) <period>
-    42. Use a different embed for NP or create your own       : *lastfm mode <type or embed code> --see embed code examples & variable documentation at the very bottom--
+    42. Use a different embed for NP or create your own       : *lastfm mode <type or embed code or 'check' to view embed code> --see embed code examples & variable documentation at the very bottom--
 
 Moderation:
     1. Clean up the bot''s messages in a channel              : *cleanup <amount> --REQUIRES MANAGE MESSAGES--
@@ -152,10 +152,11 @@ Information / Search:
     38. Gets basic information about a query                  : *[wolframalpha|wolfram|w] <query>
     39. View guild name changes                               : *[gnames|snames] <guild id>
     40. Returns information about the specified game title... : *[game|gamesearch] <title>
+    41. Get information about a steam profile                 : *steam <profile id>
 
 Misc (useful stuff & useless stuff):
     1. Add up/down arrow to message initiating a poll         : *[quickpoll|qp] <question>
-    2. Set an AFK status for when you are mentioned           : *afk <away message>
+    2. Set an AFK status for when you are mentioned           : *afk <away message> --global, not per server--
     3. Create a short poll                                    : *poll <seconds> <question>
     4. Create your own embed                                  : *[createembed|ce] <embed code> --see embed code examples and info at bottom--
     5. Edit an embed you created                              : *[editembed|edite] (message link) <embed code> --see embed code examples and info at bottom--

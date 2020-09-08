@@ -1,4 +1,4 @@
-you run into any bugs or have questions: contact me @ jon#0006
+you run into any bugs or have questions: contact me @ jon#1337
 note: you can use 'help <command>* <subcommand>' for further information on how to use a command or a list of subcommands for a command like lastfm
 
 default prefix: *, you change it by running 'prefix set <prefixhere>'
@@ -178,7 +178,9 @@ Misc (useful stuff & useless stuff):
     19. Downloads emote and adds to server                    : *[addemote|adde] <emote>
     20. Get reminders for a duration set                      : *remind <duration> <something>  
     21. Would you rather?                                     : *[wouldyourather|wyr]
+    22. Subscribe to a bitcoin transaction for one confirm... : *[subscribe|sub] <hash>
 
+        
 Server Configuration:
     1. View prefix                                            : *prefix
         1. Set command prefix for guild                       : *prefix set <prefix> --REQUIRES ADMINISTRATOR--
@@ -209,8 +211,8 @@ Server Configuration:
     5. Disable a command in a channel                        : *[disablecommand|dcmd] <channel> <command> --REQUIRES MANAGE CHANNELS--
         1. Disable a command in every channel                : *disablecommand all <command>
         2. View a list of disabled commands in guild         : *disablecommand list
-    6. Only allows people with a certain role to use command : *[restrictcommand|restrict|rc] add <command> <role> --REQUIRES MANAGE GUILD--
-        1. Removes role''s exclusive permission for command  : *restrictcomamnd remove <command> <role>
+    6. Only allows people with a certain role to use command : *[restrictcommand|restrict|rc] add <command> <role> [if command has space, replace space with .] --REQUIRES MANAGE GUILD--
+        1. Removes role''s exclusive permission for command  : *restrictcomamnd remove <command> <role> [if command has space, replace space with .]
         2. Removes every restrict command entry              : *restrictcomamnd [clear|reset]
         3. View a list of every restricted command           : *restrictcommand list 
     7. Reapplies a role on join                              : *stickyrole add <member> <role> --REQUIRES MANAGE ROLES--
@@ -325,8 +327,8 @@ Embed code documentation: --REQUIRES MANAGE MESSAGES--
         3. {user.plays}                                       : Total scrobbles for Last.fm account (from Last.fm)
          --you can use {proper(user.plays)} for formatting the amount to be proper
         4. {user.url}                                         : Last.fm URL for Last.fm account (from Last.fm)
-        5. {author}                                           : Author name and discriminator (ex: jon#0006)
-        6. {author.discriminator}                             : Author discriminator only (ex: 0006)
+        5. {author}                                           : Author name and discriminator (ex: jon#1337)
+        6. {author.discriminator}                             : Author discriminator only (ex: 1337)
         7. {author.emoji}                                     : Author emoji (you probably don''t have this)
         8. {author.name}                                      : Author username
         9. {author.nickname}                                  : Author''s nickname, defaults back to name if nickname false

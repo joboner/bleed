@@ -41,7 +41,7 @@ Last.fm [command aliases: lastfm, lfm, lf] / Music Stuff:
     30. Gives iTunes link for the current song playing        : *lastfm itunes <member>
     31. Gives Soundcloud link for the current song playing    : *lastfm [soundcloud|sc] <member>
     32. Gives Spotify results for the current song playing    : *lastfm [spotify|sp] <member>
-    33. Gives YouTue link for the current song playing        : *lastfm [youtube|yt] <member>
+    33. Gives YouTube link for the current song playing        : *lastfm [youtube|yt] <member>
     34. Shows your current song playing from Last.fm          : *[nowplaying|now|np|fm] <member or lfm username>
     35. Finds a song from the iTunes API                      : *itunes <track> [NOTE: specify artist for best guess]
     36. Finds album results from the Spotify API              : *[spotifyalbum|spalbum] <album> [NOTE: specify artist for best guess]
@@ -64,17 +64,17 @@ Moderation:
     9. Unjails a member ending their duration early           : *unjail <member> <reason>
     10. Lockdown a channel from others typing                 : *lockdown <channel> <reason> --REQUIRES BAN MEMBERS--
     11. Unlocks a channel                                     : *unlock <channel> <reason> --REQUIRES BAN MEMBERS--
-    12. Mutes a member in the current channel                 : *mute <member> --REQUIRES BAN MEMBERS--
+    12. Mutes a member in the current channel                 : *mute <member> --REQUIRES MANAGE MESSAGES--
         1. Mutes the member from every channel                : *mute all <member>
-    13. Unmutes member in the current channel                 : *unmute <member> --REQUIRES BAN MEMBERS--
+    13. Unmutes member in the current channel                 : *unmute <member> --REQUIRES MANAGE MESSAGES--
         1. Unmutes the member from every channel              : *unmute all <member>
-    14. Removes member perm for attach files & embed links    : *imute <member> --REQUIRES BAN MEMBERS-- 
+    14. Removes member perm for attach files & embed links    : *imute <member> --REQUIRES MANAGE MESSAGES-- 
         1. Removes member perm in every channel               : *imute all <member>
-    15. Restores member perm for attach files & embed links   : *iunmute <member> --REQUIRES BAN MEMBERS--
+    15. Restores member perm for attach files & embed links   : *iunmute <member> --REQUIRES MANAGE MESSAGES--
         1. Restores member perm for every channel             : *iunmute all <member>
-    16. Removes member perm for add reacts & external emotes  : *rmute <member> --REQUIRES BAN MEMBERS--
+    16. Removes member perm for add reacts & external emotes  : *rmute <member> --REQUIRES MANAGE MESSAGES--
         1. Removes member perm for every channel              : *rmute all <member>
-    17. Restores member perm for add reacts & external emotes : *runmute <member> --REQUIRES BAN MEMBERS--
+    17. Restores member perm for add reacts & external emotes : *runmute <member> --REQUIRES MANAGE MESSAGES--
         1. Restores member perm for every channel             : *runmute all <member>
     18. Updates the reason on a case log                      : *reason <case id> <reason> --REQUIRES MANAGE MESSAGES-- 
     19. See logged reactions for a message                    : *[reactionhistory|rh] <channel> <message id>
@@ -132,9 +132,9 @@ Information / Search:
     21. Search google for an image                            : *[image|img|im] <search>
     22. Search giphy for gif results                          : *[gif|giphy] <search>
     23. Search tenor for gif results                          : *tenor <search>
-    24. Search youtube for video results                      : *[youtube|yt] <search>
+    24. Search YouTube for video results                      : *[youtube|yt] <search>
     25. Gets the definition of word from Urban Dictionary     : *[urbandictionary|ud|urban] <word>
-    26. Get minecraft profile name history                    : *namemc <ign/username>
+    26. Gets minecraft profile information                    : *[minecraft|namemc|mc] <ign/username>
     27. Shows information of a book from goodreads            : *[book|goodreads] <book title>
     28. Search MyAnimeList for manga information              : *manga <search>
     29. Search MyAnimeList for anime information              : *anime <search>
@@ -313,14 +313,14 @@ Embed code documentation: --REQUIRES MANAGE MESSAGES--
         3. {description: text}                                : {description: izaya tiji put 2020 deluxe on streaming please}
         4. {color: hex code}                                  : {color: #ff0000}
         5. {url: valid url}                                   : {url: https://bleed.win}
-        6. {title: text}                                      : {url: bleed bot is the best}
+        6. {title: text}                                      : {title: bleed bot is the best}
     Fields for embeds:
         1. {field: name && value} (no inline)                 : {field: discord server && https://bleed.win/discord}
         2. {field: name && value inline) (yes inline)         : {field: help page && https://bleed.win/help}
     Other settings:
         1. {timestamp} (prints current date on embed)         : {timestamp}
         2. {thumbnail: valid url}                             : {thumbnail: https://bleed.win/other/bender_icon.png}
-        3. {image: valid url}                                 : {image: https://bleed.win/other/bender_icon.png
+        3. {image: valid url}                                 : {image: https://bleed.win/other/bender_icon.png}
     Last.fm variables (only available for *lastfm mode): --note: links and certain words like slurs etc are not allowed--
         1. {user.name}                                        : Last.fm username (from Last.fm)
         2. {user.avatar}                                      : Last.fm profile picture (from Last.fm)

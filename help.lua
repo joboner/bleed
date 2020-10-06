@@ -184,7 +184,7 @@ Misc (useful stuff & useless stuff):
 
         
 Server Configuration:
-    1. View prefix                                            : ,prefix
+    1. View prefix                                            : ,prefix --NO PERMISSION REQUIRED--
         1. Set command prefix for guild                       : ,prefix set <prefix> --REQUIRES ADMINISTRATOR--
         2. Remove command prefix from guild                   : ,prefix [remove|clear|delete] --REQUIRES ADMINISTRATOR--
     2. View settings configuration for guild                  : ,settings configuration --REQUIRES ADMINISTRATOR--
@@ -201,7 +201,7 @@ Server Configuration:
         7. Set a channel to log join/leaves                  : ,settings [joinlog|jl] <channel>
         8. Enable or disable auto mass mention ban           : ,settings [massmention|mm] <yes or no>
         9. Enable or disable spam messages in channels       : ,settings [antispam|as] <yes or no>
-        10. Set a join message for new members               : ,settings joinmessage <message>
+        10. Set a join message for new members (private msg) : ,settings joinmessage <embed code or message>
         11. Set a custom jail message                        : ,settings jailmessage <message>
         12. Enable or disable ban new accounts on join       : ,settings [bannew|bannewaccount] <yes or no>
         13. Enable or disable automatically delete invites   : ,settings [deleteinvites|di] <yes or no>
@@ -213,6 +213,30 @@ Server Configuration:
     5. Disable a command in a channel                        : ,[disablecommand|dcmd] <channel> <command> --REQUIRES MANAGE CHANNELS--
         1. Disable a command in every channel                : ,disablecommand all <command>
         2. View a list of disabled commands in guild         : ,disablecommand list
+        -- note: admins or the server owner can bypass this restriction
+    6. Enable a bot event in a channel                       : ,[enableevent|ee] <channel> <event> --REQUIRES MANAGE CHANNELS--
+        1. Enables a bot event in every channel              : ,enableevent all <event>
+    7. Disable a bot event in a channel                      : ,[disableevent|de] <channel> <event> --REQUIRES MANAGE CHANNELS--
+        1. Disable a bot event in a channel                  : ,disableevent all <event>
+        2. View a list of disabled bot events in guild       : ,disableevent list
+        -- bot events are whenever the bot automatically replies to you because of something in your message
+        -- an example of this would be reaction triggers or pinging someone who is currently afk
+        -- disabling the event 'reactiontrigger' would stop reactions from being triggered
+        -- existing events: y/n, v/s, afk, reactiontrigger, previousreaction
+        --
+        -- note: admins or the server owner cannot bypass this restriction like they can with disabled commands
+    8. Enable a module in a channel                          : ,[enablemodule|em] <channel> <module> --REQUIRES MANAGE CHANNELS--
+        1. Enables a bot event in every channel              : ,enablemodule all <module>
+    9. Disable a module in a channel                         : ,[disablemodule|dm] <channel> <module> --REQUIRES MANAGE CHANNELS--
+        1. Disable a module in every channel                 : ,disablemodule all <module>
+        2. View a list of disabled modules in guild          : ,disablemodule list
+        -- a module is a group of commands that fall under the same category like for example; lastfm.
+        -- if you were to do `,disablemodule #general lastfm` then this would disable every lastfm related command...
+        -- in the channel specified (or all if subcommand 'all' is used)
+        --
+        -- note: admins or the server owner can bypass this restriction & disabling a module will override any enabled command
+        -- that falls under the same module, so if you want all commands disabled in a channel but want one or more specifically enabled...
+        -- then you will have to disable every module (ex: lastfm) command and keep the one(s) you want enabled in one or all channels
     6. Only allows people with a certain role to use command : ,[restrictcommand|restrict|rc] add <command> <role> [if command has space, replace space with .] --REQUIRES MANAGE GUILD--
         1. Removes role''s exclusive permission for command  : ,restrictcomamnd remove <command> <role> [if command has space, replace space with .]
         2. Removes every restrict command entry              : ,restrictcomamnd [clear|reset]

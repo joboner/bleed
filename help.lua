@@ -331,6 +331,17 @@ Registration [command alias: reg, r]:
     6. Enables registration mode for guild                    : ,registration [lock|disable|off]
     7. Disables registration mode for guild                   : ,registration [unlock|enable|on]
 
+Twitter (account check & streaming): --REQUIRES MANAGE GUILD (except the twitter profile check)--
+    1. Check a twitter account profile                        : ,twitter <handle>
+    2. Stream a twitter account''s tweets into a channel      : ,twitter add (channel) <handle> --params
+    3. Update a current twitter account''s stream settings    : ,twitter update (channel) <handle> --params
+    4. Remove a stream for a twitter account from a channel   : ,twitter remove (channel) <handle>    
+    5. View a list of every existing twitter stream           : ,twitter list
+    -- available parameters:
+    -- --replies_off - doesn't notify replies from twitter account
+    -- --retweets_off - doesn't notify retweets from twitter account
+    -- ex: ,twitter update #joneral @d_g --replies_off --retweets_off
+                                    
 Giveaway: --REQUIRES MANAGE GUILD--
     1. Start a quick giveaway in your guild                   : ,giveaway (channel) <time> <prize>
     2. Manually ends a giveaway early with a winner picked    : ,giveaway end <message_id>

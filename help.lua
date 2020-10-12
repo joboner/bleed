@@ -222,7 +222,7 @@ Server Configuration:
         -- bot events are whenever the bot automatically replies to you because of something in your message
         -- an example of this would be reaction triggers or pinging someone who is currently afk
         -- disabling the event 'reactiontrigger' would stop reactions from being triggered
-        -- existing events: y/n, v/s, afk, reactiontrigger, previousreaction
+        -- existing events: y/n, v/s, afk, reactiontrigger, previousreaction, autoresponder
         --
         -- note: admins or the server owner cannot bypass this restriction like they can with disabled commands
     8. Enable a module in a channel                          : ,[enablemodule|em] <channel> <module> --REQUIRES MANAGE CHANNELS--
@@ -257,6 +257,12 @@ Server Configuration:
     10. Add a custom text comamnd to guild                   : ,[customtext|cc] add <command> <text>
         1. Remove a custom text comamnd from guild           : ,customtext remove <command>
         2. View list of custom text commands for guild       : ,customtext list
+    11. Set up automatic replies to messages that match trig : ,autoresponder (subcommand) <args>
+        1. View a list of available variables                : ,autoresponder [variables|vars]
+        2. Create a reply for a trigger word                 : ,autoresponder add (trigger), <message>
+        3. Update a reply for a trigger word                 : ,autoresponder update (trigger), <message>
+        4. Remove a reply for a trigger word                 : ,autoresponder remove <trigger>
+        5. View a list of auto-reply triggers in guild       : ,autoresponder list
 
 Reaction [command aliases: reactiontrigger, react, rt] / Previous Reaction [command aliases: previousreaction, pr]: --REQUIRES MANAGE EMOJIS--
     1. Adds a reaction trigger to guild                       : ,reaction add <emoji or emote> <trigger word>

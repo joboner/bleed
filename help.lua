@@ -244,20 +244,20 @@ Server Configuration:
     7. Reapplies a role on join                              : ,stickyrole add <member> <role> --REQUIRES MANAGE ROLES--
         1. Removes sticky role on join                       : ,stickyrole remove <member> <role>
         2. View a list of every sticky role along w/ user    : ,stickyrole list
-    8. Set up a welcome message in one or multiple channels  : ,settings welcome <add or remove> <embed code or message>
+    8. Set up a welcome message in one or multiple channels  : ,settings welcome <add or remove> <embed code or message> --REQUIRES MANAGE GUILD--
         1. Add a welcome message                             : ,settings welcome add <embed code or message>
         2. Remove a welcome message                          : ,settings welcome [remove|delete|del] <embed code or message>
         3. View variables for embed code                     : ,settings welcome [variables|vars]
         4. View welcome channels for guild                   : ,settings welcome [list|all]
-    9. Set up a goodbye message in one or multiple channels  : ,settings goodbye <add or remove> <embed code or message>
+    9. Set up a goodbye message in one or multiple channels  : ,settings goodbye <add or remove> <embed code or message> --REQUIRES MANAGE GUILD--
         1. Add a goodbye message                             : ,settings goodbye add <embed code or message>
         2. Remove a goodbye message                          : ,settings goodbye [remove|delete|del] <embed code or message>
         3. View variables for embed code                     : ,settings goodbye [variables|vars]
         4. View welcome channels for guild                   : ,settings goodbye [list|all]
-    10. Add a custom text comamnd to guild                   : ,[customtext|cc] add <command> <text>
+    10. Add a custom text comamnd to guild                   : ,[customtext|cc] add <command> <text> --REQUIRES MANAGE GUILD--
         1. Remove a custom text comamnd from guild           : ,customtext remove <command>
         2. View list of custom text commands for guild       : ,customtext list
-    11. Set up automatic replies to messages that match trig : ,autoresponder (subcommand) <args>
+    11. Set up automatic replies to messages that match trig : ,autoresponder (subcommand) <args> --REQUIRES MANAGE CHANNELS--
         1. View a list of available variables                : ,autoresponder [variables|vars]
         2. Create a reply for a trigger word                 : ,autoresponder add (trigger), <message>
         3. Update a reply for a trigger word                 : ,autoresponder update (trigger), <message>

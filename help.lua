@@ -77,7 +77,7 @@ Moderation:
     17. Restores member perm for add reacts & external emotes : ,runmute <member> --REQUIRES MANAGE MESSAGES--
         1. Restores member perm for every channel             : ,runmute all <member>
     18. Updates the reason on a case log                      : ,reason <case id> <reason> --REQUIRES MANAGE MESSAGES-- 
-    19. See logged reactions for a message                    : ,[reactionhistory|rh] <channel> <message id>
+    19. See logged reactions for a message                    : ,[reactionhistory|rh] <message link>
     20. View a list of every punishment recorded for a user   : ,history <member> --REQUIRES MANAGE MESSAGES--
     21. View a list of every current jailed member            : ,jaillist
     22. Adds or removes role to/from a member                 : ,role <member> <role> --REQUIRES MANAGE ROLES--
@@ -110,7 +110,7 @@ Moderation:
 
 Information / Search:
     1. Donate to the bot hosting server                       : ,[donate|donation|support]
-    2. View activities of a member or yourself                : ,activity <member>
+    --2. View activities of a member or yourself              : ,activity <member>-- UNAVAILABLE
     3. View members in a role                                 : ,members <role name>
     4. View server member count                               : ,[membercount|memberscount]
     5. Get avatar of a member or yourself                     : ,[avatar|av|avi|pfp] <member> [note: if you use ID, you can get anyones avatar]
@@ -175,7 +175,7 @@ Misc (useful stuff & useless stuff):
     16. Give me choices and I will pick for you               : ,choose <choices> [separate each choice with a comma]
     17. Play Rock-paper-scissors with me!                     : ,rps <choices>
     18. Returns a large emoji or server emote                 : ,[jumbo|enlarge|e] <emoji or emote>
-    19. Downloads emote and adds to server                    : ,[addemote|adde] <emote>
+    19. Downloads emote and adds to server                    : ,[addemote|adde] <emote> --REQUIRES MANAGE EMOJIS--x
     20. Get reminders for a duration set                      : ,remind <duration> <something>  
     21. Would you rather?                                     : ,[wouldyourather|wyr]
     22. Subscribe to a bitcoin transaction for one confirm... : ,[subscribe|sub] <hash>
@@ -199,15 +199,32 @@ Server Configuration:
         -- lockdown preventing any spam etc. this is super useful to prevent bot raids and stuff so i
         -- personally am telling every server owner with bleed to enable this feature, it's good to have
         7. Set a channel to log join/leaves                  : ,settings [joinlog|jl] <channel>
-        8. Enable or disable auto mass mention ban           : ,settings [massmention|mm] <yes or no>
-        9. Enable or disable spam messages in channels       : ,settings [antispam|as] <yes or no>
-        10. Set a join message for new members (private msg) : ,settings joinmessage <embed code or message>
-        11. Set a custom jail message                        : ,settings jailmessage <message>
-        12. Enable or disable ban new accounts on join       : ,settings [bannew|bannewaccount] <yes or no>
-        13. Enable or disable automatically delete invites   : ,settings [deleteinvites|di] <yes or no>
+        8. Set a join message for new members (private msg)  : ,settings joinmessage <embed code or message>
+        9. Set a custom jail message                         : ,settings jailmessage <message>
+        10. Enable or disable ban new accounts on join       : ,settings [bannew|bannewaccount] <yes or no>
+        11. Set staff role(s)                                : ,settings staff <role> [note: if existing staff role, it will be removed]
+            1. View set staff roles                          : ,settings staff list
     3. Add a filtered word to guild                          : ,filter add <word> --REQUIRES MANAGE CHANNELS-- 
-        1. Remove a filtered word from guild                 : ,filter remove <word> 
+        1. Remove a filtered word from guild                 : ,filter remove <word>
         2. View a list of filtered words in guild            : ,filter list
+        3. Delete messages that contain too many uppercase.. : ,filter caps (channel or 'all') <on or off> --params [params allowed: do & threshold]
+        4. Delete any message that contains a link           : ,filter links (channel or 'all') <on or off> --params [params allowed: do, threshold & whitelist]
+        -- ex: ,filter links all on --do delete --whitelist https://bleed.win, https://google.com 
+        -- when whitelisting links, make sure to separate each link with a comma
+        5. Delete any message exceeding threshold for emojis : ,filter links (channel or 'all') <on or off> --params [params allowed: do & threshold]
+        6. Delete any message exceeding threshold for spoi.. : ,filter spoilers (channel or 'all') <on or off> --params [params allowed: do & threshold]
+        7. Delete any message that contains a selfbot embed  : ,filter selfbot (channel or 'all') <on or off> --params [params allowed: do]
+        8. Delete any message that contains a music file     : ,filter musicfiles (channel or 'all') <on or off> --params [params allowed: do]
+        -- blacklisted exts: .mp3, .flac, .m4a, .wav, .webm
+        9. Delete any message exceeding threshold for ment.. : ,filter massmention (channel or 'all') <on or off> --params [params allowed: do & threshold]
+        10. Delete any message that contains a server link   : ,filter invites (channel or 'all') <on or off> --params
+        11. Delete messages from users that send messages... : ,filter [spam|antispam] (channel or 'all') <on or off> --params [params allowed: do]
+        -- examples:
+        -- ,filter links #music on --do warn --threshold 2 --whitelist https://bleed.win
+        -- ,filter massmention all on --do ban --threshold 10
+        -- ,filter spam all off
+        --
+        -- available punishments for 'do' parameter: ban, kick, jail, warn, delete (message)
     4. Enable a previously disabled command in a channel     : ,[enablecommand|ecmd] <channel> <command> --REQUIRES MANAGE CHANNELS-- 
         1. Enable a command in every channel                 : ,enablecommand all <command>
     5. Disable a command in a channel                        : ,[disablecommand|dcmd] <channel> <command> --REQUIRES MANAGE CHANNELS--
@@ -237,6 +254,8 @@ Server Configuration:
         -- note: admins or the server owner can bypass this restriction & disabling a module will override any enabled command
         -- that falls under the same module, so if you want all commands disabled in a channel but want one or more specifically enabled...
         -- then you will have to disable every module (ex: lastfm) command and keep the one(s) you want enabled in one or all channels
+        -- 
+        -- module list: lastfm, misc, fun, information, crypto
     6. Only allows people with a certain role to use command : ,[restrictcommand|restrict|rc] add <command> <role> [if command has space, replace space with .] --REQUIRES MANAGE GUILD--
         1. Removes role''s exclusive permission for command  : ,restrictcomamnd remove <command> <role> [if command has space, replace space with .]
         2. Removes every restrict command entry              : ,restrictcomamnd [clear|reset]
@@ -277,8 +296,8 @@ Reaction [command aliases: reactiontrigger, react, rt] / Previous Reaction [comm
         4. View a list of every previous reaction trigger     : ,previousreact list
 
 Reaction Roles [command alias: rr] / Autorole [command alias: ar]: --REQUIRES ADMINISTRATOR--
-    1. Adds a reaction role to a message                      : ,reactionrole add (message_id) <reaction> <role>
-        1. Removes a reaction role from a message             : ,reactionrole remove (message_id) <reaction>
+    1. Adds a reaction role to a message                      : ,reactionrole add (message link) <reaction> <role>
+        1. Removes a reaction role from a message             : ,reactionrole remove (message link) <reaction>
         2. Clears every reaction role from guild              : ,reactionrole [clear|reset]
         3. View a list of every reaction role                 : ,reactionrole list
         4. Disables/locks reaction roles from operating       : ,reactionrole [lock|disable|off]
@@ -289,7 +308,7 @@ Reaction Roles [command alias: rr] / Autorole [command alias: ar]: --REQUIRES AD
         3. View a list of every autorole                      : ,autorole list
 
 Tags [command aliases: tag, t]:
-    Info - No, tags are not global; they are server specific.
+    -- no, tags are not global; they are server specific
     1. View a tag                                             : ,tags <tag name>
     2. Add a tag                                              : ,tags add <tag name> <contexxt>
     3. Delete a tag                                           : ,tags [remove|delete|del] <tag name> --can bypass if admin--
@@ -301,27 +320,31 @@ Tags [command aliases: tag, t]:
     9. View a list of every tag in guild                      : ,tags list
 
 Starboard [command alias: star]: --REQUIRES MANAGE GUILD--
-    1. Sets the emoji that triggers the starboard messages    : ,starboard emoji <emoji/emote> [NOTE: make sure the bot can access the emote if not using emoji]
-    2. Ignore stars from those without a whitelisted role     : ,starboard role <role name>
-    3. View a list of starboard roles that are whitelisted    : ,starboard [rolelist|starboard]
-    4. Sets the channel where starboard messages will be sent : ,starboard set <channel>
-    5. View the settings for starboard in guild               : ,starboard config
-    6. Sets the default amount stars needed to post           : ,starboard threshold <amount>
-    7. Disables/locks starboard from operating                : ,starboard [lock|disable|off]
-    8. Enables/unlocks starboard from operating               : ,starboard [unlock|enable|on]
-    9. Resets guild''s configuration for starboard            : ,starboard [reset|delete|del]
+    1. Sets the emoji that triggers the starboard messages     : ,starboard emoji <emoji/emote> [NOTE: make sure the bot can access the emote if not using emoji]
+    2. Ignore stars from those without a whitelisted role      : ,starboard role <role name>
+    3. View a list of starboard roles that are whitelisted     : ,starboard [rolelist|starboard]
+    4. Sets the channel where starboard messages will be sent  : ,starboard set <channel>
+    5. View the settings for starboard in guild                : ,starboard config
+    6. Sets the default amount stars needed to post            : ,starboard threshold <amount>
+    7. Disables/locks starboard from operating                 : ,starboard [lock|disable|off]
+    8. Enables/unlocks starboard from operating                : ,starboard [unlock|enable|on]
+    9. Resets guild''s configuration for starboard             : ,starboard [reset|delete|del]
+    10. Ignore a channel so messages dont get starred          : ,starboard channel <channel>
+    11. View a list of starboard channels that are blacklisted : ,starboard blacklist
 
 Clownboard [command alias: clown]: --REQUIRES MANAGE GUILD--
-    1. Sets the emoji that triggers the clownboard messages    : ,clownboard emoji <emoji/emote> [NOTE: make sure the bot can access the emote if not using emoji]
-    2. Ignore clowns from those without a whitelisted role     : ,clownboard role <role name>
-    3. View a list of clownboard roles that are whitelisted    : ,clownboard [rolelist|starboard]
-    4. Sets the channel where clownboard messages will be sent : ,clownboard set <channel>
-    5. View the settings for clownboard in guild               : ,clownboard config
-    6. Sets the default amount clowns needed to post           : ,clownboard threshold <amount>
-    7. Disables/locks clownboard from operating                : ,clownboard [lock|disable|off]
-    8. Enables/unlocks clownboard from operating               : ,clownboard [unlock|enable|on]
-    9. Resets guild''s configuration for clownboard            : ,clownboard [reset|delete|del]
-
+    1. Sets the emoji that triggers the clownboard messages     : ,clownboard emoji <emoji/emote> [NOTE: make sure the bot can access the emote if not using emoji]
+    2. Ignore clowns from those without a whitelisted role      : ,clownboard role <role name>
+    3. View a list of clownboard roles that are whitelisted     : ,clownboard [rolelist|starboard]
+    4. Sets the channel where clownboard messages will be sent  : ,clownboard set <channel>
+    5. View the settings for clownboard in guild                : ,clownboard config
+    6. Sets the default amount clowns needed to post            : ,clownboard threshold <amount>
+    7. Disables/locks clownboard from operating                 : ,clownboard [lock|disable|off]
+    8. Enables/unlocks clownboard from operating                : ,clownboard [unlock|enable|on]
+    9. Resets guild''s configuration for clownboard             : ,clownboard [reset|delete|del]
+    10. Ignore a channel so messages dont get starred           : ,clownboard channel <channel>
+    11. View a list of clownboard channels that are blacklisted : ,clownboard blacklist
+                                    
 Registration [command alias: reg, r]:
     1. Accept a member pending registration                   : ,registration [allow|accept|a] <id>
     2. Denies a member pending registration                   : ,registration [decline|deny|d] <id>

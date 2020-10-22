@@ -106,7 +106,7 @@ Moderation:
         1. Add a note for a member                            : ,notes add <member> <note>
         2. Removes a note for a member                        : ,notes [remove|delete|del] <member> <id>
         3. Clears all notes for a member                      : ,notes [clear|cl] <member>
-
+    32. Chunk ban recently joined members                     : ,[recentban|chunkban] (amount) <reason>
 
 Information / Search:
     1. Donate to the bot hosting server                       : ,[donate|donation|support]
@@ -124,7 +124,7 @@ Information / Search:
     13. Gets information about a subreddit from Reddit API    : ,reddit <subreddit name>
     14. Checks the current price of a specified currency      : ,[cryptocurrency|crypto] <symbol> [PLEASE USE SYMBOL NOT NAME]
     15. View information about a Minecraft server             : ,mcstatus <server ip or domain>
-    --16. Gets simple weather using openweathermap API        : ,weather <location> [this api sucks]-- UNAVAILABLE
+    16. Gets simple weather using openweathermap API          : ,weather <location>
     17. View username and nickname history                    : ,names <member>
     18. Search the duckduckgo search engine                   : ,[duckduckgo|ddg] <search>
     19. Search the largest search engine on the internet      : ,[google|g] <search>
@@ -153,6 +153,17 @@ Information / Search:
     39. View guild name changes                               : ,[gnames|snames] <guild id>
     40. Returns information about the specified game title... : ,[game|gamesearch] <title>
     41. Get information about a steam profile                 : ,steam <profile id>
+    42. Get COVID-19 statistics for a given location          : ,[covid|coronavirus] <country code or US state code> <US state code>
+        1. Get a linear or logarithmic graph for COVID-19     : ,[covid|coronavirus] graph (graph type) (reuslt type) <location(s)
+        -- graph types: linear or log/logarithmic
+        -- result types: confirmed, recovered or deaths
+        --
+        -- ex:
+        -- ,covid california 
+        -- ,covid canada
+        -- ,covid UK
+        -- ,covid graph log confirmed us
+        -- ,covid graph linear deaths us uk lv
 
 Misc (useful stuff & useless stuff):
     1. Add up/down arrow to message initiating a poll         : ,[quickpoll|qp] <question>
@@ -206,19 +217,20 @@ Server Configuration:
             1. View set staff roles                          : ,settings staff list
     3. Add a filtered word to guild                          : ,filter add <word> --REQUIRES MANAGE CHANNELS-- 
         1. Remove a filtered word from guild                 : ,filter remove <word>
-        2. View a list of filtered words in guild            : ,filter list
-        3. Delete messages that contain too many uppercase.. : ,filter caps (channel or 'all') <on or off> --params [params allowed: do & threshold]
-        4. Delete any message that contains a link           : ,filter links (channel or 'all') <on or off> --params [params allowed: do, threshold & whitelist]
+        2. Whitelist a word to prevent unintentional delet.. : ,filter whitelist <word>
+        3. View a list of filtered words in guild            : ,filter list
+        4. Delete messages that contain too many uppercase.. : ,filter caps (channel or 'all') <on or off> --params [params allowed: do & threshold]
+        5. Delete any message that contains a link           : ,filter links (channel or 'all') <on or off> --params [params allowed: do, threshold & whitelist]
         -- ex: ,filter links all on --do delete --whitelist https://bleed.win, https://google.com 
         -- when whitelisting links, make sure to separate each link with a comma
-        5. Delete any message exceeding threshold for emojis : ,filter links (channel or 'all') <on or off> --params [params allowed: do & threshold]
-        6. Delete any message exceeding threshold for spoi.. : ,filter spoilers (channel or 'all') <on or off> --params [params allowed: do & threshold]
-        7. Delete any message that contains a selfbot embed  : ,filter selfbot (channel or 'all') <on or off> --params [params allowed: do]
-        8. Delete any message that contains a music file     : ,filter musicfiles (channel or 'all') <on or off> --params [params allowed: do]
+        6. Delete any message exceeding threshold for emojis : ,filter links (channel or 'all') <on or off> --params [params allowed: do & threshold]
+        7. Delete any message exceeding threshold for spoi.. : ,filter spoilers (channel or 'all') <on or off> --params [params allowed: do & threshold]
+        8. Delete any message that contains a selfbot embed  : ,filter selfbot (channel or 'all') <on or off> --params [params allowed: do]
+        9. Delete any message that contains a music file     : ,filter musicfiles (channel or 'all') <on or off> --params [params allowed: do]
         -- blacklisted exts: .mp3, .flac, .m4a, .wav, .webm
-        9. Delete any message exceeding threshold for ment.. : ,filter massmention (channel or 'all') <on or off> --params [params allowed: do & threshold]
-        10. Delete any message that contains a server link   : ,filter invites (channel or 'all') <on or off> --params
-        11. Delete messages from users that send messages... : ,filter [spam|antispam] (channel or 'all') <on or off> --params [params allowed: do]
+        10. Delete any message exceeding threshold for ment..: ,filter massmention (channel or 'all') <on or off> --params [params allowed: do & threshold]
+        11. Delete any message that contains a server link   : ,filter invites (channel or 'all') <on or off> --params
+        12. Delete messages from users that send messages... : ,filter [spam|antispam] (channel or 'all') <on or off> --params [params allowed: do]
         -- examples:
         -- ,filter links #music on --do warn --threshold 2 --whitelist https://bleed.win
         -- ,filter massmention all on --do ban --threshold 10
@@ -255,7 +267,7 @@ Server Configuration:
         -- that falls under the same module, so if you want all commands disabled in a channel but want one or more specifically enabled...
         -- then you will have to disable every module (ex: lastfm) command and keep the one(s) you want enabled in one or all channels
         -- 
-        -- module list: lastfm, misc, fun, information, crypto
+        -- module list: lastfm, misc, fun, information, crypto, coronavirus_stats
     6. Only allows people with a certain role to use command : ,[restrictcommand|restrict|rc] add <command> <role> [if command has space, replace space with .] --REQUIRES MANAGE GUILD--
         1. Removes role''s exclusive permission for command  : ,restrictcomamnd remove <command> <role> [if command has space, replace space with .]
         2. Removes every restrict command entry              : ,restrictcomamnd [clear|reset]
@@ -281,7 +293,8 @@ Server Configuration:
         2. Create a reply for a trigger word                 : ,autoresponder add (trigger), <message>
         3. Update a reply for a trigger word                 : ,autoresponder update (trigger), <message>
         4. Remove a reply for a trigger word                 : ,autoresponder remove <trigger>
-        5. View a list of auto-reply triggers in guild       : ,autoresponder list
+        5. Remove every auto response                        : ,autoresponder [clear|reset]
+        6. View a list of auto-reply triggers in guild       : ,autoresponder list
 
 Reaction [command aliases: reactiontrigger, react, rt] / Previous Reaction [command aliases: previousreaction, pr]: --REQUIRES MANAGE EMOJIS--
     1. Adds a reaction trigger to guild                       : ,reaction add <emoji or emote> <trigger word>

@@ -96,6 +96,7 @@ Moderation:
         5. Purge messages containing given substring          : ,purge contains <substring>
         6. Purge reactions from messages in chat              : ,purge reactions <amount>
         7. Purge messages up to a message link                : ,purge upto <message link>
+        -- note: pass a recent message link, don't try deleting messages super old
     24. Restricts members to sending one msg per interval     : ,slowmode on <channel> <seconds> --REQUIRES MANAGE MESSAGES--
     25. Disables slowmode in a channel                        : ,slowmode off <channel> --REQUIRES MANAGE MESSAGES--
     26. Enable permissions to attach files & embed links      : ,revokefiles on <channel> --REQUIRES MANAGE MESSAGES--

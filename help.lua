@@ -177,9 +177,10 @@ Misc (useful stuff & useless stuff):
     7. Decode a BASE64 string                                 : ,[base64|decode] <coded string>
     8. View a list of every active invite                     : ,invites --REQUIRES MANAGE GUILD--
     9. how to                                                 : ,[wikihow|whow] <query>
-    10. Replies with the link to this website                 : ,help
+    10. Replies with the link to this website or get cmd info : ,help <command> <subcommand>
+    -- for a list of every inside embed variable, run ,help variables
     11. pong emote [useless]                                  : ,pong
-    12. skepta dance [useless]                                : ,skeptadance
+    12. emote of nut [useless]                                : ,nut
     13. yes [useless]                                         : ,no
     14. Replies w insulting msg unless the bot isn''t alive   : ,check 
     15. Flip a coin!                                          : ,coinflip
@@ -190,6 +191,7 @@ Misc (useful stuff & useless stuff):
     20. Get reminders for a duration set                      : ,remind <duration> <something>  
     21. Would you rather?                                     : ,[wouldyourather|wyr]
     22. Subscribe to a bitcoin transaction for one confirm... : ,[subscribe|sub] <hash>
+    -- note: if a transaction has been checking for a confirmation for more than 30 hours, then it will expire to save mass requests to blockchain
     23. Write a compliment (yes, this is read)                : ,[compliment|complement] <text>
     24. Write a compliant (yes, this is read)                 : ,[compliant|complain] <text>
 
@@ -251,7 +253,7 @@ Server Configuration:
         -- bot events are whenever the bot automatically replies to you because of something in your message
         -- an example of this would be reaction triggers or pinging someone who is currently afk
         -- disabling the event 'reactiontrigger' would stop reactions from being triggered
-        -- existing events: y/n, v/s, afk, reactiontrigger, previousreaction, autoresponder
+        -- existing events: y/n, v/s, afk, reactiontrigger, previousreaction, autoresponder, commandfailure
         --
         -- note: admins or the server owner cannot bypass this restriction like they can with disabled commands
     8. Enable a module in a channel                          : ,[enablemodule|em] <channel> <module> --REQUIRES MANAGE CHANNELS--
@@ -320,6 +322,15 @@ Reaction Roles [command alias: rr] / Autorole [command alias: ar]: --REQUIRES AD
         2. Clears every autorole for guild                    : ,autorole [clear|reset]
         3. View a list of every autorole                      : ,autorole list
 
+Pagination [command alias: pn]: --REQUIRES MANAGE MESSAGES--
+    1. Set up an existing embed to be paginated               : ,pagination set (message link)
+    -- note: the message link must be a embed created using ,createembed
+    2. Add a page to a pagination embed                       : ,pagination add (message link) <embed code>
+    3. Remove a page from a pagination embed                  : ,pagination [remove|delete|del] (message link) <id>
+    4. Update an existing page on pagination embed            : ,pagination update (message link) <id> <embed code>
+    5. View all existing pagination embeds                    : ,pagination list
+    6. Remove every existing pagination in guild              : ,pagination [reset|clear]
+                                
 Tags [command aliases: tag, t]:
     -- no, tags are not global; they are server specific
     1. View a tag                                             : ,tags <tag name>
@@ -399,6 +410,66 @@ Embed code documentation: --REQUIRES MANAGE MESSAGES--
         1. {timestamp} (prints current date on embed)         : {timestamp}
         2. {thumbnail: valid url}                             : {thumbnail: https://bleed.win/other/bender_icon.png}
         3. {image: valid url}                                 : {image: https://bleed.win/other/bender_icon.png}
+    Inside embed code variables:
+        1. {user}                                             : Name and discriminator
+        2. {user.mention}                                     : User mention
+        3. {user.name}                                        : Only return name
+        4. {user.tag}                                         : Only return discriminator
+        5. {user.avatar}                                      : User profile picture
+        6. {user.joined_at}                                   : User guild join date in UTC
+        7. {user.created_at}                                  : User discord creation date in UTC
+        8. {user.display_name}                                : Current user display name
+        9. {user.boost}                                       : Returns Yes or No if user is boosting guild or not
+        10. {user.boost_since}                                : User initial guild boost date
+        11. {user.color}                                      : User top role hex code
+        12. {user.top_role}                                   : User top role name, defaults to N/A if none
+        13. {user.role_list}                                  : User role list, defaults to N/A if none
+        14. {user.role_count}                                 : User role count
+        15. {user.bot}                                        : Returns Yes or No if user is bot or not
+        16. {user.badges_icons}                               : User profile badges w/ emotes, defaults to N/A if none
+        17. {user.badges}                                     : User profile badges in text, defaults to N/A if none
+        18. {guild.name}                                      : Guild name
+        19. {guild.count}                                     : Guild member count
+        20. {guild.region}                                    : Guild voice region
+        21. {guild.id}                                        : Guild ID
+        22. {guild.shard}                                     : Guild shard ID on bot
+        23. {guild.owner_id}                                  : Guild owner ID
+        24. {guild.created_at}                                : Guild creation date in UTC
+        25. {guild.emoji_count}                               : Guild emoji count
+        26. {guild.boost_count}                               : Guild boost count
+        27. {guild.boost_tier}                                : Guild boost tier, defaults to No Level if none
+        28. {guild.preferred_locale}                          : Guild preferred locale
+        29. {guild.key_features}                              : List of guild features, defaults to N/A if none
+        30. {guild.icon}                                      : Guild icon URL as a PNG, defaults to N/A if none
+        31. {guild.banner}                                    : Guild banner URL as a PNG, defaults to N/A if none
+        32. {guild.splash}                                    : Guild splash URL as a PNG, defaults to N/A if none
+        33. {guild.discovery}                                 : Guild discovery splash URL as a PNG, defaults to N/A if none
+        34. {guild.max_presences}                             : Guild max presences amount
+        35. {guild.max_members}                               : Guild max members amount
+        36. {guild.max_video_channel_users}                   : Guild max video channel users
+        37. {guild.afk_timeout}                               : Guild AFK timeout in seconds
+        38. {guild.afk_channel}                               : Guild AFK channel, defaults to N/A if none
+        39. {guild.channels}                                  : List of text, voice & category channels, defaults to N/A if none
+        40. {guild.channels_count}                            : Guild total channel count
+        41. {guild.text_channels}                             : List of text channels
+        42. {guild.text_channels_count}                       : Guild text channel count
+        43. {guild.voice_channels}                            : List of voice channels
+        44. {guild.voice_channels_count}                      : Guild voice channel count
+        45. {guild.category_channels}                         : List of category channels
+        46. {guild.category_channels_count}                   : Guild category channel count
+        47. {channel.name}                                    : Current channel name
+        48. {channel.id}                                      : Channel ID
+        49. {channel.topic}                                   : Current channel topic
+        50. {channel.mention}                                 : Channel mention
+        51. {channel.type}                                    : Channel type
+        52. {channel.category_id}                             : Category ID that current channel belongs to, defaults to N/A if none
+        53. {channel.category_name}                           : Category name that current channel belongs to, defualt to N/A if none
+        54. {channel.position}                                : Current channel index on list
+        55. {channel.last_message_id}                         : Current channel''s last message ID
+        56. {channel.slowmode_delay}                          : Current channel slow mode interval, defualts to 0 if delay off
+        57. {date.now}                                        : Current timestamp in PST
+        58. {date.utc_now}                                    : Current timestamp in UTC
+
     Last.fm variables (only available for *lastfm mode): --note: links and certain words like slurs etc are not allowed--
         1. {user.name}                                        : Last.fm username (from Last.fm)
         2. {user.avatar}                                      : Last.fm profile picture (from Last.fm)

@@ -290,8 +290,10 @@ Server Configuration:
         3. View variables for embed code                     : ,settings goodbye [variables|vars]
         4. View welcome channels for guild                   : ,settings goodbye [list|all]
     10. Add a custom text comamnd to guild                   : ,[customtext|cc] add <command> <text> --REQUIRES MANAGE GUILD--
-        1. Remove a custom text comamnd from guild           : ,customtext remove <command>
-        2. View list of custom text commands for guild       : ,customtext list
+        1. Update an existing custom text command            : ,customtext update <command> <text>
+        2. Remove a custom text comamnd from guild           : ,customtext remove <command>
+        3. Remove every custom text command                  : ,customtext [clear|reset]
+        4. View list of custom text commands for guild       : ,customtext list
     11. Set up automatic replies to messages that match trig : ,autoresponder (subcommand) <args> --REQUIRES MANAGE CHANNELS--
         1. View a list of available variables                : ,autoresponder [variables|vars]
         2. Create a reply for a trigger word                 : ,autoresponder add (trigger), <message>
@@ -330,8 +332,8 @@ Pagination [command alias: pn]: --REQUIRES MANAGE MESSAGES--
     2. Add a page to a pagination embed                       : ,pagination add (message link) <embed code>
     3. Remove a page from a pagination embed                  : ,pagination [remove|delete|del] (message link) <id>
     4. Update an existing page on pagination embed            : ,pagination update (message link) <id> <embed code>
-    5. View all existing pagination embeds                    : ,pagination list
-    6. Remove every existing pagination in guild              : ,pagination [reset|clear]
+    5. Remove every existing pagination in guild              : ,pagination [reset|clear] --REQUIRES MANAGE GUILD--
+    6. View all existing pagination embeds                    : ,pagination list
                                 
 Tags [command aliases: tag, t]:
     -- no, tags are not global; they are server specific
@@ -438,39 +440,50 @@ Embed code documentation: --REQUIRES MANAGE MESSAGES--
         23. {guild.owner_id}                                  : Guild owner ID
         24. {guild.created_at}                                : Guild creation date in UTC
         25. {guild.emoji_count}                               : Guild emoji count
-        26. {guild.boost_count}                               : Guild boost count
-        27. {guild.boost_tier}                                : Guild boost tier, defaults to No Level if none
-        28. {guild.preferred_locale}                          : Guild preferred locale
-        29. {guild.key_features}                              : List of guild features, defaults to N/A if none
-        30. {guild.icon}                                      : Guild icon URL as a PNG, defaults to N/A if none
-        31. {guild.banner}                                    : Guild banner URL as a PNG, defaults to N/A if none
-        32. {guild.splash}                                    : Guild splash URL as a PNG, defaults to N/A if none
-        33. {guild.discovery}                                 : Guild discovery splash URL as a PNG, defaults to N/A if none
-        34. {guild.max_presences}                             : Guild max presences amount
-        35. {guild.max_members}                               : Guild max members amount
-        36. {guild.max_video_channel_users}                   : Guild max video channel users
-        37. {guild.afk_timeout}                               : Guild AFK timeout in seconds
-        38. {guild.afk_channel}                               : Guild AFK channel, defaults to N/A if none
-        39. {guild.channels}                                  : List of text, voice & category channels, defaults to N/A if none
-        40. {guild.channels_count}                            : Guild total channel count
-        41. {guild.text_channels}                             : List of text channels
-        42. {guild.text_channels_count}                       : Guild text channel count
-        43. {guild.voice_channels}                            : List of voice channels
-        44. {guild.voice_channels_count}                      : Guild voice channel count
-        45. {guild.category_channels}                         : List of category channels
-        46. {guild.category_channels_count}                   : Guild category channel count
-        47. {channel.name}                                    : Current channel name
-        48. {channel.id}                                      : Channel ID
-        49. {channel.topic}                                   : Current channel topic
-        50. {channel.mention}                                 : Channel mention
-        51. {channel.type}                                    : Channel type
-        52. {channel.category_id}                             : Category ID that current channel belongs to, defaults to N/A if none
-        53. {channel.category_name}                           : Category name that current channel belongs to, defualt to N/A if none
-        54. {channel.position}                                : Current channel index on list
-        55. {channel.last_message_id}                         : Current channel''s last message ID
-        56. {channel.slowmode_delay}                          : Current channel slow mode interval, defualts to 0 if delay off
-        57. {date.now}                                        : Current timestamp in PST
-        58. {date.utc_now}                                    : Current timestamp in UTC
+        26. {guild.role_count}                                : Guild role count
+        27. {guild.boost_count}                               : Guild boost count
+        28. {guild.boost_tier}                                : Guild boost tier, defaults to No Level if none
+        29. {guild.preferred_locale}                          : Guild preferred locale
+        30. {guild.key_features}                              : List of guild features, defaults to N/A if none
+        31. {guild.icon}                                      : Guild icon URL as a PNG, defaults to N/A if none
+        32. {guild.banner}                                    : Guild banner URL as a PNG, defaults to N/A if none
+        33. {guild.splash}                                    : Guild splash URL as a PNG, defaults to N/A if none
+        34. {guild.discovery}                                 : Guild discovery splash URL as a PNG, defaults to N/A if none
+        35. {guild.max_presences}                             : Guild max presences amount
+        36. {guild.max_members}                               : Guild max members amount
+        37. {guild.max_video_channel_users}                   : Guild max video channel users
+        38. {guild.afk_timeout}                               : Guild AFK timeout in seconds
+        39. {guild.afk_channel}                               : Guild AFK channel, defaults to N/A if none
+        40. {guild.channels}                                  : List of text, voice & category channels, defaults to N/A if none
+        41. {guild.channels_count}                            : Guild total channel count
+        42. {guild.text_channels}                             : List of text channels
+        43. {guild.text_channels_count}                       : Guild text channel count
+        44. {guild.voice_channels}                            : List of voice channels
+        45. {guild.voice_channels_count}                      : Guild voice channel count
+        46. {guild.category_channels}                         : List of category channels
+        47. {guild.category_channels_count}                   : Guild category channel count
+        48. {channel.name}                                    : Current channel name
+        49. {channel.id}                                      : Channel ID
+        50. {channel.topic}                                   : Current channel topic
+        51. {channel.mention}                                 : Channel mention
+        52. {channel.type}                                    : Channel type
+        53. {channel.category_id}                             : Category ID that current channel belongs to, defaults to N/A if none
+        54. {channel.category_name}                           : Category name that current channel belongs to, defualt to N/A if none
+        55. {channel.position}                                : Current channel index on list
+        56. {channel.last_message_id}                         : Current channel''s last message ID
+        57. {channel.slowmode_delay}                          : Current channel slow mode interval, defualts to 0 if delay off
+        58. {date.now}                                        : Current date in PST
+        59. {date.now_proper}                                 : Better formatted date in PST
+        60. {date.now_short}                                  : Short formatted date in PST
+        61. {date.now_shorter}                                : Shorter formatted date in PST
+        62. {time.now}                                        : 12 hour timestamp in PST
+        63. {time.now_military}                               : 24 hour timestamp in PST
+        64. {date.utc_now}                                    : Current date in UTC
+        65. {date.utc_now_proper}                             : Better formatted date in UTC
+        66. {date.utc_now_short}                              : Short formatted date in UTC
+        67. {date.utc_now_shorter}                            : Shorter formatted date in UTC
+        68. {time.utc_now}                                    : 12 hour timestamp in UTC
+        69. {time.utc_now_military}                           : 24 hour timestamp in UTC
 
     Last.fm variables (only available for *lastfm mode): --note: links and certain words like slurs etc are not allowed--
         1. {user.name}                                        : Last.fm username (from Last.fm)

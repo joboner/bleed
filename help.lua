@@ -279,14 +279,16 @@ Server Configuration:
     7. Reapplies a role on join                              : ,stickyrole add <member> <role> --REQUIRES MANAGE ROLES--
         1. Removes sticky role on join                       : ,stickyrole remove <member> <role>
         2. View a list of every sticky role along w/ user    : ,stickyrole list
-    8. Set up a welcome message in one or multiple channels  : ,settings welcome <add or remove> <embed code or message> --REQUIRES MANAGE GUILD--
-        1. Add a welcome message                             : ,settings welcome add <embed code or message>
-        2. Remove a welcome message                          : ,settings welcome [remove|delete|del] <embed code or message>
+    8. Set up a welcome message in one or multiple channels  : ,settings welcome <add or remove> <channel> <embed code or message> --REQUIRES MANAGE GUILD--
+        1. Add a welcome message                             : ,settings welcome add <channel> <embed code or message> --params [params allowed: self_destruct]
+        -- note: if you pass a number to self_destruct parameter, it cannot be more than 60 seconds
+        2. Remove a welcome message                          : ,settings welcome [remove|delete|del] <channel> <embed code or message>
         3. View variables for embed code                     : ,settings welcome [variables|vars]
         4. View welcome channels for guild                   : ,settings welcome [list|all]
-    9. Set up a goodbye message in one or multiple channels  : ,settings goodbye <add or remove> <embed code or message> --REQUIRES MANAGE GUILD--
-        1. Add a goodbye message                             : ,settings goodbye add <embed code or message>
-        2. Remove a goodbye message                          : ,settings goodbye [remove|delete|del] <embed code or message>
+    9. Set up a goodbye message in one or multiple channels  : ,settings goodbye <add or remove> <channel> <embed code or message> --REQUIRES MANAGE GUILD--
+        1. Add a goodbye message                             : ,settings goodbye add <channel> <embed code or message> --params [params allowed: self_destruct]
+        -- note: if you pass a number to self_destruct parameter, it cannot be more than 60 seconds
+        2. Remove a goodbye message                          : ,settings goodbye [remove|delete|del] <channel> <embed code or message>
         3. View variables for embed code                     : ,settings goodbye [variables|vars]
         4. View welcome channels for guild                   : ,settings goodbye [list|all]
     10. Add a custom text comamnd to guild                   : ,[customtext|cc] add <command> <text> --REQUIRES MANAGE GUILD--

@@ -303,6 +303,24 @@ Server Configuration:
         4. Remove a reply for a trigger word                 : ,autoresponder remove <trigger>
         5. Remove every auto response                        : ,autoresponder [clear|reset]
         6. View a list of auto-reply triggers in guild       : ,autoresponder list
+    12. Antinuke to protect your server                      : ,antinuke (subcommand) <args> --REQUIRES ADMINISTRATOR--
+        1. Prevent mass channel delete                       : ,antinuke channel (on or off) --params [params allowed: do, threshold]
+        2. Prevent mass role delete                          : ,antinuke role (on or off) --params [params allowed: do, threshold, command]
+        3. Prevent mass emoji delete                         : ,antinuke emoji (on or off) --params [params allowed: do, threshold]
+        -- warning: this module may be unstable due to Discord''s rate limit
+        4. Prevent mass member ban                           : ,antinuke ban (on or off) --params [params allowed: do, threshold, command]
+        5. Prevent mass member kick                          : ,antinuke kick (on or off) --params [params allowed: do, threshold, command]
+        -- note: for 'ban', 'kick' and 'role', if you pass the command parameter it enabled - one of those modules will
+        -- trigger (depending if you have one or all enabled) for the following commands: ,ban ,kick ,role delete
+        6. Prevent roles being granted administrator permiss : ,antinuke grantadmin (on or off)
+        7. Prevent roles being removed administrator permiss : ,antinuke removeadmin (on or off)
+        8. Prevent new bot additions                         : ,antinuke botadd (on or off)
+        9. Whitelist a member from triggering antiraid or bo : ,antinuke whitelist (member or bot id)
+        -- note: whitelisting a member will exempt a member from triggering any antiraid module and whitelisting a bot
+        -- will allow it to join if 'botadd' is enabled so it is not removed on join 
+        10. View all enabled modules along with whiteliste.. : ,antinuke list
+        -- note: i highly suggest keeping the threshold set to it's default but at your own will, you are allowed to change this
+        -- available punishments for 'do' parameter: ban, kick, stripstaff
 
 Reaction [command aliases: reactiontrigger, react, rt] / Previous Reaction [command aliases: previousreaction, pr]: --REQUIRES MANAGE EMOJIS--
     1. Adds a reaction trigger to guild                       : ,reaction add <emoji or emote> <trigger word>

@@ -303,11 +303,11 @@ Server Configuration:
         4. Remove a reply for a trigger word                 : ,autoresponder remove <trigger>
         5. Remove every auto response                        : ,autoresponder [clear|reset]
         6. View a list of auto-reply triggers in guild       : ,autoresponder list
-    12. Antinuke to protect your server                      : ,antinuke (subcommand) <args> --REQUIRES ADMINISTRATOR--
+    12. Antinuke to protect your server                      : ,antinuke (subcommand) <args> --REQUIRES SERVER OWNER--
         1. Prevent mass channel delete                       : ,antinuke channel (on or off) --params [params allowed: do, threshold]
         2. Prevent mass role delete                          : ,antinuke role (on or off) --params [params allowed: do, threshold, command]
         3. Prevent mass emoji delete                         : ,antinuke emoji (on or off) --params [params allowed: do, threshold]
-        -- warning: this module may be unstable due to Discord''s rate limit
+        -- warning: this module may be unstable due to discord''s rate limit
         4. Prevent mass member ban                           : ,antinuke ban (on or off) --params [params allowed: do, threshold, command]
         5. Prevent mass member kick                          : ,antinuke kick (on or off) --params [params allowed: do, threshold, command]
         -- note: for 'ban', 'kick' and 'role', if you pass the command parameter it enabled - one of those modules will
@@ -411,13 +411,22 @@ Twitter (account check & streaming): --REQUIRES MANAGE GUILD (except the twitter
     -- available parameters:
     -- --replies_off - doesn't notify replies from twitter account
     -- --retweets_off - doesn't notify retweets from twitter account
-    -- ex: ,twitter update #joneral @d_g --replies_off --retweets_off
-                                    
-Giveaway: --REQUIRES MANAGE GUILD--
-    1. Start a quick giveaway in your guild                   : ,giveaway (channel) <time> <prize>
-    2. Manually ends a giveaway early with a winner picked    : ,giveaway end <message_id>
-    3. Rerolls the specified or latest giveaway in guild      : ,giveaway reroll <message_id>
-    4. View a list of every active giveaway in guild          : ,giveaway list
+    -- ex: ,twitter update #joneral @d_g --replies_off --retweets_off                         
+        
+Subreddit (subreddit check & streaming): --REQUIRES MANAGE GUILD (except the subreddit check)--              
+    1. Check a subreddit                                      : ,subreddit <name>
+    2. Stream a subreddit''s posts into a channel             : ,subreddit add (channel) <name>
+    3. Update a current subreddit''s stream channel           : ,subreddit update (channel) <name>
+    4. Remove a stream for a subreddit from a channel         : ,subreddit remove (channel) <name>
+    5. View a list of every existing subreddit stream         : ,subreddit list
+    -- note: NSFW or private subreddits cannot be streamed or checked so don't attempt  
+                                        
+--Giveaway: --REQUIRES MANAGE GUILD-- 
+--    1. Start a quick giveaway in your guild                   : ,giveaway (channel) <time> <prize>
+--    2. Manually ends a giveaway early with a winner picked    : ,giveaway end <message_id>
+--    3. Rerolls the specified or latest giveaway in guild      : ,giveaway reroll <message_id>
+--    4. View a list of every active giveaway in guild          : ,giveaway list--
+-- temporarily disabled
 
 Embed code documentation: --REQUIRES MANAGE MESSAGES--
     Available embed settings: (Example is on the right)

@@ -323,7 +323,7 @@ Server Configuration:
         -- available punishments for 'do' parameter: ban, kick, stripstaff
 
 Reaction [command aliases: reactiontrigger, react, rt] / Previous Reaction [command aliases: previousreaction, pr]: --REQUIRES MANAGE EMOJIS--
-    1. Adds a reaction trigger to guild                       : ,reaction add <emoji or emote> <trigger word>
+    1. Adds a reaction trigger to guild                       : ,reaction add <emoji or emote> <trigger word> [only 3 triggers per word]
         1. Removes a reaction trigger from guild              : ,reaction [remove|delete|del] <trigger_word> [NOTE: if you delete a trigger word w multiple reacts, those will be removed too]
         2. Removes every reaction trigger in guild            : ,reaction [clear|reset]
         3. Gets the author of a trigger word                  : ,reaction author <member>
@@ -335,7 +335,7 @@ Reaction [command aliases: reactiontrigger, react, rt] / Previous Reaction [comm
         4. View a list of every previous reaction trigger     : ,previousreact list
 
 Reaction Roles [command alias: rr] / Autorole [command alias: ar]: --REQUIRES ADMINISTRATOR--
-    1. Adds a reaction role to a message                      : ,reactionrole add (message link) <reaction> <role>
+    1. Adds a reaction role to a message                      : ,reactionrole add (message link) <reaction> <role> [only 3 triggers per word]
         1. Removes a reaction role from a message             : ,reactionrole remove (message link) <reaction>
         2. Clears every reaction role from guild              : ,reactionrole [clear|reset]
         3. View a list of every reaction role                 : ,reactionrole list
@@ -461,58 +461,60 @@ Embed code documentation: --REQUIRES MANAGE MESSAGES--
         15. {user.bot}                                        : Returns Yes or No if user is bot or not
         16. {user.badges_icons}                               : User profile badges w/ emotes, defaults to N/A if none
         17. {user.badges}                                     : User profile badges in text, defaults to N/A if none
-        18. {guild.name}                                      : Guild name
-        19. {guild.count}                                     : Guild member count
-        20. {guild.region}                                    : Guild voice region
-        21. {guild.id}                                        : Guild ID
-        22. {guild.shard}                                     : Guild shard ID on bot
-        23. {guild.owner_id}                                  : Guild owner ID
-        24. {guild.created_at}                                : Guild creation date in UTC
-        25. {guild.emoji_count}                               : Guild emoji count
-        26. {guild.role_count}                                : Guild role count
-        27. {guild.boost_count}                               : Guild boost count
-        28. {guild.boost_tier}                                : Guild boost tier, defaults to No Level if none
-        29. {guild.preferred_locale}                          : Guild preferred locale
-        30. {guild.key_features}                              : List of guild features, defaults to N/A if none
-        31. {guild.icon}                                      : Guild icon URL as a PNG, defaults to N/A if none
-        32. {guild.banner}                                    : Guild banner URL as a PNG, defaults to N/A if none
-        33. {guild.splash}                                    : Guild splash URL as a PNG, defaults to N/A if none
-        34. {guild.discovery}                                 : Guild discovery splash URL as a PNG, defaults to N/A if none
-        35. {guild.max_presences}                             : Guild max presences amount
-        36. {guild.max_members}                               : Guild max members amount
-        37. {guild.max_video_channel_users}                   : Guild max video channel users
-        38. {guild.afk_timeout}                               : Guild AFK timeout in seconds
-        39. {guild.afk_channel}                               : Guild AFK channel, defaults to N/A if none
-        40. {guild.channels}                                  : List of text, voice & category channels, defaults to N/A if none
-        41. {guild.channels_count}                            : Guild total channel count
-        42. {guild.text_channels}                             : List of text channels
-        43. {guild.text_channels_count}                       : Guild text channel count
-        44. {guild.voice_channels}                            : List of voice channels
-        45. {guild.voice_channels_count}                      : Guild voice channel count
-        46. {guild.category_channels}                         : List of category channels
-        47. {guild.category_channels_count}                   : Guild category channel count
-        48. {channel.name}                                    : Current channel name
-        49. {channel.id}                                      : Channel ID
-        50. {channel.topic}                                   : Current channel topic
-        51. {channel.mention}                                 : Channel mention
-        52. {channel.type}                                    : Channel type
-        53. {channel.category_id}                             : Category ID that current channel belongs to, defaults to N/A if none
-        54. {channel.category_name}                           : Category name that current channel belongs to, defualt to N/A if none
-        55. {channel.position}                                : Current channel index on list
-        56. {channel.last_message_id}                         : Current channel''s last message ID
-        57. {channel.slowmode_delay}                          : Current channel slow mode interval, defualts to 0 if delay off
-        58. {date.now}                                        : Current date in PST
-        59. {date.now_proper}                                 : Better formatted date in PST
-        60. {date.now_short}                                  : Short formatted date in PST
-        61. {date.now_shorter}                                : Shorter formatted date in PST
-        62. {time.now}                                        : 12 hour timestamp in PST
-        63. {time.now_military}                               : 24 hour timestamp in PST
-        64. {date.utc_now}                                    : Current date in UTC
-        65. {date.utc_now_proper}                             : Better formatted date in UTC
-        66. {date.utc_now_short}                              : Short formatted date in UTC
-        67. {date.utc_now_shorter}                            : Shorter formatted date in UTC
-        68. {time.utc_now}                                    : 12 hour timestamp in UTC
-        69. {time.utc_now_military}                           : 24 hour timestamp in UTC
+        18. {user.join_position}                              : User join position
+        19. {user.join_position_suffix}                       : User join position with suffix
+        20. {guild.name}                                      : Guild name
+        21. {guild.count}                                     : Guild member count
+        22. {guild.region}                                    : Guild voice region
+        23. {guild.id}                                        : Guild ID
+        24. {guild.shard}                                     : Guild shard ID on bot
+        25. {guild.owner_id}                                  : Guild owner ID
+        26. {guild.created_at}                                : Guild creation date in UTC
+        27. {guild.emoji_count}                               : Guild emoji count
+        28. {guild.role_count}                                : Guild role count
+        29. {guild.boost_count}                               : Guild boost count
+        30. {guild.boost_tier}                                : Guild boost tier, defaults to No Level if none
+        31. {guild.preferred_locale}                          : Guild preferred locale
+        32. {guild.key_features}                              : List of guild features, defaults to N/A if none
+        33. {guild.icon}                                      : Guild icon URL as a PNG, defaults to N/A if none
+        34. {guild.banner}                                    : Guild banner URL as a PNG, defaults to N/A if none
+        35. {guild.splash}                                    : Guild splash URL as a PNG, defaults to N/A if none
+        36. {guild.discovery}                                 : Guild discovery splash URL as a PNG, defaults to N/A if none
+        37. {guild.max_presences}                             : Guild max presences amount
+        38. {guild.max_members}                               : Guild max members amount
+        39. {guild.max_video_channel_users}                   : Guild max video channel users
+        40. {guild.afk_timeout}                               : Guild AFK timeout in seconds
+        41. {guild.afk_channel}                               : Guild AFK channel, defaults to N/A if none
+        42. {guild.channels}                                  : List of text, voice & category channels, defaults to N/A if none
+        43. {guild.channels_count}                            : Guild total channel count
+        44. {guild.text_channels}                             : List of text channels
+        45. {guild.text_channels_count}                       : Guild text channel count
+        46. {guild.voice_channels}                            : List of voice channels
+        47. {guild.voice_channels_count}                      : Guild voice channel count
+        48. {guild.category_channels}                         : List of category channels
+        49. {guild.category_channels_count}                   : Guild category channel count
+        50. {channel.name}                                    : Current channel name
+        51. {channel.id}                                      : Channel ID
+        52. {channel.topic}                                   : Current channel topic
+        53. {channel.mention}                                 : Channel mention
+        54. {channel.type}                                    : Channel type
+        55. {channel.category_id}                             : Category ID that current channel belongs to, defaults to N/A if none
+        56. {channel.category_name}                           : Category name that current channel belongs to, defualt to N/A if none
+        57. {channel.position}                                : Current channel index on list
+        58. {channel.last_message_id}                         : Current channel''s last message ID
+        59. {channel.slowmode_delay}                          : Current channel slow mode interval, defualts to 0 if delay off
+        60. {date.now}                                        : Current date in PST
+        61. {date.now_proper}                                 : Better formatted date in PST
+        62. {date.now_short}                                  : Short formatted date in PST
+        63. {date.now_shorter}                                : Shorter formatted date in PST
+        64. {time.now}                                        : 12 hour timestamp in PST
+        65. {time.now_military}                               : 24 hour timestamp in PST
+        66. {date.utc_now}                                    : Current date in UTC
+        67. {date.utc_now_proper}                             : Better formatted date in UTC
+        68. {date.utc_now_short}                              : Short formatted date in UTC
+        69. {date.utc_now_shorter}                            : Shorter formatted date in UTC
+        70. {time.utc_now}                                    : 12 hour timestamp in UTC
+        71. {time.utc_now_military}                           : 24 hour timestamp in UTC
 
     Last.fm variables (only available for *lastfm mode): --note: links and certain words like slurs etc are not allowed--
         1. {user.name}                                        : Last.fm username (from Last.fm)

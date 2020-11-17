@@ -196,6 +196,8 @@ Misc (useful stuff & useless stuff):
     -- note: if a transaction has been checking for a confirmation for more than 30 hours, then it will expire to save mass requests to blockchain
     23. Write a compliment (yes, this is read)                : ,[compliment|complement] <text>
     24. Write a compliant (yes, this is read)                 : ,[compliant|complain] <text>
+    25. Snipe the latest message that was deleted             : ,[snipe|s] <channel>
+    -- note: server moderators/administrators can entirely disabled this by using ,disableevent all snipe
 
         
 Server Configuration:
@@ -255,7 +257,7 @@ Server Configuration:
         -- bot events are whenever the bot automatically replies to you because of something in your message
         -- an example of this would be reaction triggers or pinging someone who is currently afk
         -- disabling the event 'reactiontrigger' would stop reactions from being triggered
-        -- existing events: y/n, v/s, afk, reactiontrigger, previousreaction, autoresponder, commandfailure
+        -- existing events: y/n, v/s, afk, reactiontrigger, previousreaction, autoresponder, commandfailure, snipe
         --
         -- note: admins or the server owner cannot bypass this restriction like they can with disabled commands
     8. Enable a module in a channel                          : ,[enablemodule|em] <channel> <module> --REQUIRES MANAGE CHANNELS--

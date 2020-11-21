@@ -104,11 +104,12 @@ Moderation:
     28. Assigns the mentioned member a new nickname           : ,rename <member> <new nick> --REQUIRES MANAGE NICKNAMES--
     29. Start process for setting up the moderation system    : ,setme --REQUIRES ADMINISTRATOR--
     30. Unlocks every channel if the antiraid was triggered   : ,unlock all --REQUIRES BAN MEMBERS--
-    31. View notes on a member                                : ,[notes|note] <member>
+    31. View notes on a member                                : ,[notes|note] <member> --REQUIRES MANAGE MESSAGES--
         1. Add a note for a member                            : ,notes add <member> <note>
         2. Removes a note for a member                        : ,notes [remove|delete|del] <member> <id>
         3. Clears all notes for a member                      : ,notes [clear|cl] <member>
-    32. Chunk ban recently joined members                     : ,[recentban|chunkban] (amount) <reason>
+    32. Chunk ban recently joined members                     : ,[recentban|chunkban] (amount) <reason> --REQUIRES ADMINISTRATOR-- 
+    33. Move all members in current channel to another chan.. : ,moveall <voice channel> --REQUIRES ADMINISTRATOR--
 
 Information / Search:
     1. Donate to the bot hosting server                       : ,[donate|donation|support]
@@ -123,7 +124,7 @@ Information / Search:
     10. Returns guild icon                                    : ,[guildicon|servericon|gicon|sicon..&more] [note: if you use ID, you can get any guild icon]
     11. Returns guild banner                                  : ,[guildbanner|gbanner|sbanner|serverbanner] [note: if you use ID, you can get any guild banner]
     --12. View a member or yourself''s join date and position : ,joined <member>-- REMOVED
-    13. Gets information about a subreddit from Reddit API    : ,reddit <subreddit name>
+    --13. Gets information about a subreddit from Reddit API    : ,reddit <subreddit name>-- THIS IS NOW ,SUBREDDIT
     14. Checks the current price of a specified currency      : ,[cryptocurrency|crypto] <symbol> [PLEASE USE SYMBOL NOT NAME]
     15. View information about a Minecraft server             : ,mcstatus <server ip or domain>
     16. Gets simple weather using openweathermap API          : ,weather <location>
@@ -166,6 +167,8 @@ Information / Search:
         -- ,covid UK
         -- ,covid graph log confirmed us
         -- ,covid graph linear deaths us uk lv
+    43. View all recent server boosters                       : ,boosters
+        1. View list of most recent lost boosters             : ,boosters lost
 
 Misc (useful stuff & useless stuff):
     1. Add up/down arrow to message initiating a poll         : ,[quickpoll|qp] <question>
@@ -221,22 +224,24 @@ Server Configuration:
         10. Enable or disable ban new accounts on join       : ,settings [bannew|bannewaccount] <yes or no>
         11. Set staff role(s)                                : ,settings staff <role> [note: if existing staff role, it will be removed]
             1. View set staff roles                          : ,settings staff list
-    3. Add a filtered word to guild                          : ,filter add <word> --REQUIRES MANAGE CHANNELS-- 
-        1. Remove a filtered word from guild                 : ,filter remove <word>
-        2. Whitelist a word to prevent unintentional delet.. : ,filter whitelist <word>
-        3. View a list of filtered words in guild            : ,filter list
-        4. Delete messages that contain too many uppercase.. : ,filter caps (channel or 'all') <on or off> --params [params allowed: do & threshold]
-        5. Delete any message that contains a link           : ,filter links (channel or 'all') <on or off> --params [params allowed: do, threshold & whitelist]
+    3. Add a filtered word to guild                          : ,filter add <word> --params [params allowed: do] --REQUIRES MANAGE CHANNELS-- 
+        1. Update a filtered word''s punishment setting      : ,filter update <word> --params [params allowed: do]
+        -- ex: ,filter add dumbass --do warn
+        2. Remove a filtered word from guild                 : ,filter remove <word>
+        3. Whitelist a word to prevent unintentional delet.. : ,filter whitelist <word>
+        4. View a list of filtered words in guild            : ,filter list
+        5. Delete messages that contain too many uppercase.. : ,filter caps (channel or 'all') <on or off> --params [params allowed: do & threshold]
+        6. Delete any message that contains a link           : ,filter links (channel or 'all') <on or off> --params [params allowed: do, threshold & whitelist]
         -- ex: ,filter links all on --do delete --whitelist https://bleed.win, https://google.com 
         -- when whitelisting links, make sure to separate each link with a comma
-        6. Delete any message exceeding threshold for emojis : ,filter links (channel or 'all') <on or off> --params [params allowed: do & threshold]
-        7. Delete any message exceeding threshold for spoi.. : ,filter spoilers (channel or 'all') <on or off> --params [params allowed: do & threshold]
-        8. Delete any message that contains a selfbot embed  : ,filter selfbot (channel or 'all') <on or off> --params [params allowed: do]
-        9. Delete any message that contains a music file     : ,filter musicfiles (channel or 'all') <on or off> --params [params allowed: do]
+        7. Delete any message exceeding threshold for emojis : ,filter links (channel or 'all') <on or off> --params [params allowed: do & threshold]
+        8. Delete any message exceeding threshold for spoi.. : ,filter spoilers (channel or 'all') <on or off> --params [params allowed: do & threshold]
+        9. Delete any message that contains a selfbot embed  : ,filter selfbot (channel or 'all') <on or off> --params [params allowed: do]
+        10. Delete any message that contains a music file     : ,filter musicfiles (channel or 'all') <on or off> --params [params allowed: do]
         -- blacklisted exts: .mp3, .flac, .m4a, .wav, .webm
-        10. Delete any message exceeding threshold for ment..: ,filter massmention (channel or 'all') <on or off> --params [params allowed: do & threshold]
-        11. Delete any message that contains a server link   : ,filter invites (channel or 'all') <on or off> --params
-        12. Delete messages from users that send messages... : ,filter [spam|antispam] (channel or 'all') <on or off> --params [params allowed: do]
+        11. Delete any message exceeding threshold for ment..: ,filter massmention (channel or 'all') <on or off> --params [params allowed: do & threshold]
+        12. Delete any message that contains a server link   : ,filter invites (channel or 'all') <on or off> --params
+        13. Delete messages from users that send messages... : ,filter [spam|antispam] (channel or 'all') <on or off> --params [params allowed: do]
         -- examples:
         -- ,filter links #music on --do warn --threshold 2 --whitelist https://bleed.win
         -- ,filter massmention all on --do ban --threshold 10

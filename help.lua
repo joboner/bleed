@@ -234,7 +234,7 @@ Server Configuration:
         6. Delete any message that contains a link           : ,filter links (channel or 'all') <on or off> --params [params allowed: do, threshold & whitelist]
         -- ex: ,filter links all on --do delete --whitelist https://bleed.win, https://google.com 
         -- when whitelisting links, make sure to separate each link with a comma
-        7. Delete any message exceeding threshold for emojis : ,filter links (channel or 'all') <on or off> --params [params allowed: do & threshold]
+        7. Delete any message exceeding threshold for emojis : ,filter emoji (channel or 'all') <on or off> --params [params allowed: do & threshold]
         8. Delete any message exceeding threshold for spoi.. : ,filter spoilers (channel or 'all') <on or off> --params [params allowed: do & threshold]
         9. Delete any message that contains a selfbot embed  : ,filter selfbot (channel or 'all') <on or off> --params [params allowed: do]
         10. Delete any message that contains a music file     : ,filter musicfiles (channel or 'all') <on or off> --params [params allowed: do]
